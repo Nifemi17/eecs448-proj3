@@ -1,4 +1,0 @@
--This is where we'll explain our design pattern (for our prototype? I assume so but the project writeup
- didn't specify)
-
--250-350 words, 5% total grade
