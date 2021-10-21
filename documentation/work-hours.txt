@@ -1,0 +1,13 @@
+Format
+  --[name]: [hour]:[minute]
+
+Oct-17
+  --Team Meeting: 1:20
+  --Yuri:         0:52
+  
+Oct-19
+  --Team Meeting: 1:27
+  
+Oct-20
+  --Team Meeting: 1:04
+  --Yuri:         0:26
