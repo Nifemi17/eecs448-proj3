@@ -1,20 +1,20 @@
 Oct-17 4:00pm - 5:20pm
---ATTENDEES: Nifemi, Yuri
---Discussed application ideas and what can be done before the whole team's first meeting
+  --ATTENDEES: Nifemi, Yuri
+  --Discussed application ideas and what can be done before the whole team's first meeting
 
 Oct-19 2:20pm - 3:47pm
---ATTENDEEES: All
---Decided on application idea (Snakes and Ladders/Anagrams game mix)
---Began brainstorming requirements to add to our artifact.
---TASKS:
-  --Yuri: email a GTA to ask for specifics on the requirement artifact and prototype for project
+  --ATTENDEEES: All
+  --Decided on application idea (Snakes and Ladders/Anagrams game mix)
+  --Began brainstorming requirements to add to our artifact.
+  --TASKS:
+    --Yuri: email a GTA to ask for specifics on the requirement artifact and prototype for project
          3.
 --NEXT MEETING DATE: Oct 20th (time to be determined)
 		 
 Oct-20 1:00pm - 2:04pm
---ATTENDEES: ALL
---Decided to make a Collection of Features as our requirements artifact.
---Finalized the Collection of Features to present to GTAs, indicated which
-  requirements will be fulfilled by project 3's prototype.
---TASKS:
-  --Yuri: send GTAs an email describing our application, with the artifact attached.
+  --ATTENDEES: ALL
+  --Decided to make a Collection of Features as our requirements artifact.
+  --Finalized the Collection of Features to present to GTAs, indicated which
+    requirements will be fulfilled by project 3's prototype.
+  --TASKS:
+    --Yuri: send GTAs an email describing our application, with the artifact attached.
