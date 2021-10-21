@@ -1,0 +1,3 @@
+-This is where we'll explain our prototype's design paradigm
+
+-250-350 words, 5% total grade

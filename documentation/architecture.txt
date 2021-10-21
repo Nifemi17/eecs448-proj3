@@ -1,0 +1,3 @@
+-This is where we'll explain our software architecture of our prototype (within context of design paradigm)
+
+-250-350 words, 5% total grade
