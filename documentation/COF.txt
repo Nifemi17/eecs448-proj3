@@ -1,0 +1,20 @@
+-Take player number input (2 to 4)
+-Players choose their piece (color)
+
+--Player Turn--
+  -Track which player is going next
+  -Calculate/display list of random letters (10 – letters carried over) for player to use
+  -Carry over letters not used each turn
+  -Let user input words for 15 seconds - Prototype
+  -Allow one reset of letter choices per turn
+  -Verify valid input by comparing to a dictionary database and list of letters - Prototype
+  -Display time left, reset flag, current longest word, and list of letters to be used - Prototype
+  -At time out, calculate spaces the player will move based on longest word’s length - Prototype
+
+--Board--
+  -Display board spaces, player pieces - Prototype
+  -100 board spaces (10x10)
+  -Move player piece at end of every turn - Prototype
+  -Colored, paired spaces let players move between (if landed on one)
+  -Opponent pieces move back if player lands in same space
+  -Display win when a player piece reaches the end - Prototype
