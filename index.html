@@ -12,11 +12,22 @@
 </head>
 <body>
   <script src="main.js"></script>
+  
+  <canvas id="gameCanvas" 
+          width="500"
+		  height="500"
+		  style="left: 0; top: 0; position: absolute; border: 1px solid black;">
+
   <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
+    let canvas = document.getElementById('gameCanvas');
+	let context = canvas.getContext('2d');
+	
+	//hands control to main.js after DOM content is loaded and parsed.
+    document.addEventListener('DOMContentLoaded', () => {
 	  console.log('DOM finished loading/parsing');
+	  //defined in main.js
+	  startGame();
 	  });
   </script>
-  <p>If you can read this, you a nerd lol</p>
-	  
+</body>	  
 </html>
