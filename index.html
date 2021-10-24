@@ -2,32 +2,36 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Anagram Board Game</title>
-  <meta name="description" content="A game that mixes Chutes and Ladders with Anagrams">
-  <meta name="author" content="EECS 448 Team 18">
+	<title>Anagram Board Game</title>
+	<meta name="description" content="A game that mixes Chutes and Ladders with Anagrams">
+	<meta name="author" content="EECS 448 Team 18">
   
 </head>
 <body>
-  <script src="main.js"></script>
+	<script src="main.js"></script>
+	<script src="wordCheck.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   
   <canvas id="gameCanvas" 
-          width="500"
-		  height="500"
-		  style="left: 0; top: 0; position: absolute; border: 1px solid black;">
+        width="500"
+		height="500"
+		style="left: 0; top: 0; position: absolute; border: 1px solid black;">
 
   <script>
+    let wordArray = [];
     let canvas = document.getElementById('gameCanvas');
 	let context = canvas.getContext('2d');
 	
 	//hands control to main.js after DOM content is loaded and parsed.
     document.addEventListener('DOMContentLoaded', () => {
-	  console.log('DOM finished loading/parsing');
-	  //defined in main.js
-	  startGame();
-	  });
+		console.log('DOM finished loading/parsing');
+			
+		//defined in main.js
+		startGame();
+		});
   </script>
 </body>	  
 </html>
