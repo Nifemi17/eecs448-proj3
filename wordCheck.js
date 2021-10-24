@@ -1,10 +1,19 @@
 /*
-* This file will handle whatever we want it to baby, yeah!
+* This file handles comparing given strings with the word of lists
 */
 
-//variable canvas = gameCanvas HTML element
 //variable context = gameCanvas's context
 
+/*
+* returns true if the passed string str is a word on the word list.
+*/
+function isWord(str) {
+	return wordArray.includes(str);
+}
+
+/*
+* creates a string and then calls isWord to check if it's in the word list. prints the result.
+*/
 function wordCheckTest() {
 
 	$.get("https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt", function(contents){
@@ -12,19 +21,20 @@ function wordCheckTest() {
 	wordArray = contents;
 	console.log("wordArray filled");
 
-	var word = '\porphyraceae\r';
+	//word to be checked
+	var str = '\nporphyraceae\r';
 
 	//check if file contains the word Hello
-	var hasString = wordArray.includes(word);
+	var hasString = isWord(str);
 	console.log("finished checking word");
 
-	//outputs true if contained, else false
+	//prints to canvas if str is a word or not
 	if (hasString) {
-		context.fillText(word + 'is a word', 100, 100);
+		context.fillText(str + 'is a word', 100, 100);
 	}
    
 	else {
-		context.fillText(word + 'is not a word', 100, 100);
+		context.fillText(str + 'is not a word', 100, 100);
 	}	
 	});
 }
