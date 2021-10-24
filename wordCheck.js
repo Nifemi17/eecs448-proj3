@@ -12,7 +12,7 @@ function isWord(str) {
 }
 
 /**
-* @pre str's value starts with \n and ends with \r
+* @pre str's value starts with '\n' and ends with '\r'
 * creates a string and then calls isWord to check if it's in the word list. prints the result.
 * Just tests that str is successfully checked as a word or not.
 */
@@ -26,10 +26,10 @@ function wordCheckTest() {
 
 	//prints to canvas if str is a word or not
 	if (hasString || str == '\na\r' || str == '\nzwitterionic\r') {
-		context.fillText(str + 'is a word', 100, 150);
+		context.fillText(str + 'is a word', 100, 120);
 	}
 	else {
-		context.fillText(str + 'is not a word', 100, 150);
+		context.fillText(str + 'is not a word', 100, 120);
 	}	
 }
 
