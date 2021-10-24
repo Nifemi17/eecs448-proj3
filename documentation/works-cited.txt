@@ -1,0 +1,1 @@
+words.txt - Originally "words_alpha.txt", pulled from open-source repository https://github.com/dwyl/english-words/blob/master/words_alpha.txt 
