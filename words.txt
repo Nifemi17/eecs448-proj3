@@ -1437,7 +1437,6 @@ acceleration
 accelerations
 accelerative
 accelerator
-acceleratorh
 acceleratory
 accelerators
 accelerograph
@@ -73221,6 +73220,7 @@ cryptococcus
 cryptocommercial
 cryptocrystalline
 cryptocrystallization
+cryptocurrency
 cryptodeist
 cryptodynamic
 cryptodira
@@ -298299,6 +298299,9 @@ spalls
 spalpeen
 spalpeens
 spalt
+spam
+spammed
+spamming
 span
 spanaemia
 spanaemic
@@ -327920,6 +327923,7 @@ transfusionist
 transfusions
 transfusive
 transfusively
+transgender
 transgeneration
 transgenerations
 transgredient
