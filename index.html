@@ -10,10 +10,13 @@
   <meta name="author" content="EECS 448 Team 18">
   
 </head>
+<div id="randoLetters" align = "right"></div>
+<div id="result" align = "right"></div>
 <body>
   <script src="main.js"></script>
   <script src="board.js"></script>
   <script src="wordCheck.js"></script>
+  <script src="anagram.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
   <canvas id="gameCanvas" 
@@ -38,4 +41,13 @@
 	  });
   </script>
 </body>	  
+<div align ="right">
+  
+  <div class="element-input">
+    <input class="large" id= "inputWord" type="text" name="nw" style ="margin-bottom: 10px;">
+  </div>
+  <div class="submit" align="left">
+   <div align = "right"> <input type="button"  value="Click to 10 random letters" onclick="letters()" style ="background-color: #f2f239"><div>
+   <div align = "right"> <input type="button"  value="Click to submit" onclick="validLetters()" style ="background-color: #f2f239"><div>
+</div>
 </html>
