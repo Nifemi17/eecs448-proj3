@@ -1,1 +1,10 @@
-words.txt - Originally "words_alpha.txt", pulled from open-source repository https://github.com/dwyl/english-words/blob/master/words_alpha.txt 
+---Word Database Sources---
+
+--File containing list of english words
+https://github.com/dwyl/english-words/blob/master/words_alpha.txt
+
+--Using JQuery to search for text in a txt file
+https://stackoverflow.com/questions/39996539/search-inside-txt-file-using-javascript
+
+--Using promises to wait for asynchronous processes (such as JQuery.get()) to finish before continuing
+https://itnext.io/async-and-await-in-javascript-the-extension-to-a-promise-f4e0048964ac
