@@ -26,10 +26,10 @@ function wordCheckTest() {
 
 	//prints to canvas if str is a word or not
 	if (hasString || str == '\na\r' || str == '\nzwitterionic\r') {
-		context.fillText(str + 'is a word', 100, 120);
+		//context.fillText(str + 'is a word', 100, 120);
 	}
 	else {
-		context.fillText(str + 'is not a word', 100, 120);
+		//context.fillText(str + 'is not a word', 100, 120);
 	}	
 }
 

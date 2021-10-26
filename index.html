@@ -8,10 +8,11 @@
   <title>Anagram Board Game</title>
   <meta name="description" content="A game that mixes Chutes and Ladders with Anagrams">
   <meta name="author" content="EECS 448 Team 18">
+  <link rel="stylesheet" href="style.css">
   <h1>Welcome to the new and improved snakes and ladder baby!</h1> 
 </head>
-<div id="randoLetters" align = "center" style="margin-top: 30%; margin-bottom: 18px;"></div>
-<div id="result" align = "center"></div>
+<div id="randoLetters" align = "center" style="margin-top:10%; margin-left: 45%; margin-bottom: 18px; padding: 10px; font-size: 25px;">RANDOM LETTERS HERE</div>
+<div id="result" align = "center" style="margin-bottom: 10px; margin-left: 45%;">Result</div>
 <div id="countdown" align = "center"></div>
 <body>
   <script src="main.js"></script>
@@ -24,7 +25,7 @@
   <canvas id="gameCanvas" 
 width="500"
 height="120"
-style="position: absolute; left: 50%; margin-left:-260px; top: 50%; margin-top:-100px; border: 1px solid rgb(247, 214, 214);">
+style="position: absolute; left: 20%; margin-left:-220px; top: 30%; margin-top:-100px; border: 1px solid rgb(247, 214, 214);">
 </canvas>
 
   <script>
@@ -40,16 +41,16 @@ style="position: absolute; left: 50%; margin-left:-260px; top: 50%; margin-top:-
 	  //defined in main.js
 	  startGame();
     printBoard();
+    wordPrep();
 	  });
   </script>
 </body>	  
 <div align ="center">
   
   <div class="element-input">
-    <input class="large" id= "inputWord" type="text" name="nw" style ="margin-bottom: 10px; ">
+    <input class="large" id= "inputWord" type="text" name="nw" style ="margin-bottom: 10px; margin-left: 45%;" onkeydown="pressEnter(event)">
   </div>
   <div class="submit" align="left">
-   <div align = "center"> <input type="button"  value="Click to start turn" onclick="letters(); startTimer() ; setTimeout( function() { playGame(); }, 15000);" style ="background-color: #f2f239"><div>
-   <div align = "center"> <input type="button"  value="Click to submit" onclick="validLetters()" style ="background-color: #f2f239"><div>
+   <div align = "center"> <input type="button"  value="Click to start turn" onclick="letters(); startTimer() ; setTimeout( function() { playGame(); }, 15000);" style ="background-color: #f2f239; margin-left: 45%;"><div>
 </div>
 </html>

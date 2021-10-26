@@ -43,9 +43,30 @@ function validLetters() {
             break;
         }
     }
-    container3.textContent=match;
+    if (isWord(userInput.toLowerCase()) && match) {
+        container3.textContent=true;
+    }
+    else {
+        container3.textContent=false;
+    }
     console.log(match);
+    console.log(isWord(userInput.toLowerCase()))
     lengthChecker();
+}
+
+
+function pressEnter(e){
+    if (!e) e = window.event;
+    var keyCode = e.code || e.key;
+    if (keyCode == 'Enter'){
+      // Enter pressed
+      validLetters();
+      clearUserInput();
+    }
+  }
+
+function clearUserInput() {
+    document.getElementById("inputWord").value = "";
 }
 
 function lengthChecker()
