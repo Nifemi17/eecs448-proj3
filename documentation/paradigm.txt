@@ -1,3 +1,25 @@
--This is where we'll explain our prototype's design paradigm
+For our application prototype, we decided to use the Functional Design Paradigm. We
+initially considered using an Object-Oriented Design, but we wanted to focus on the
+front- and back-end functionality of our program and ensure that an entire turn can
+be successfully ran, starting with the Anagrams minigame and ending with moving a
+player piece on a game board. Our requirements artifact also had an emphasis on what
+our game should be able to do, not what information would be needed for our game to
+work correctly, and our initial behavior diagram was an activity diagram that was
+drawn based on the relationships between our functions. Thus, we believed that
+continuing to emphasize the functions needed, and then determining the information 
+those functions would need, aligned better with our intention for the prototype. 
+ 
+We first drafted two large components: Game, which would handle the Anagrams minigame,
+and Board, which would handle the player movement and output. We then categorized our
+prototype requirements into the components based on the type of functionality they 
+would provide. For instance, we designed our Board component to handle the requirements
+of printing the game board, moving the player piece, and checking if the win condition
+has been met by reaching the end of the board. After we determined the functions our
+components would need, we then determined what information would need to be managed 
+based on the needs of those functions, which included an array to track the player’s
+board position, an array of chars to store the random letters per turn, and a user 
+input variable.
 
--250-350 words, 5% total grade
+After project 3, we will return to our chosen paradigm to determine 
+if we should switch to an Object-Oriented Design for the full application, as we will 
+start handling more information such as the management of multiple player positions.
