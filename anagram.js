@@ -15,10 +15,10 @@ function letters(){
 }
 
 
-
+var userInput = '';
 function validLetters() {
     var letters = '';
-    var userInput = '';
+    
     let container1 = document.getElementById("randoLetters");
     let container2 = document.getElementById("inputWord");
     let container3 = document.getElementById("result");
@@ -45,6 +45,20 @@ function validLetters() {
     }
     container3.textContent=match;
     console.log(match);
+    lengthChecker();
+}
+
+function lengthChecker()
+{
+let longest =0;
+let LongWord;
+if (userInput.length > longest)
+{
+    longest = userInput.length;
+    LongWord = userInput;
+    console.log(longest);
+}
+return longest;
 }
 
 
