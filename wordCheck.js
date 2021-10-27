@@ -8,7 +8,7 @@
 * returns true if the passed string str is a word on the word list.
 */
 function isWord(str) {
-	return wordArray.includes(str);
+	return wordArray.includes('\n' + str + '\r');
 }
 
 /**
