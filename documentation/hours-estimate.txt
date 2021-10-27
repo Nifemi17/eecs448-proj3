@@ -1,0 +1,51 @@
+Project 2 ended up taking a total of 88.23 hours to complete, which was a little more than double what we had estimated.
+Most of this time was spent debugging, since it was very difficult for us to understand the source code we were given.
+This led to much of our earlier implementations needing to be worked on for a while, and we had spent a lot of time
+At the end of the project's cycle troubleshooting our AI functions. Also, we had omitted the AI functionality completely 
+when calculating the hours estimate, which skewed the estimate even further.
+
+So, if we had increased the complexity of all the inputs and outputs to average and added an AI file as an average master 
+file (15 UFP), the total UFP would be 51 and the estimate would have been 84.81 hours (only 4 less than the actual total). 
+However, had we included the AI file in our estimate, it would have probably been considered average in complexity. Still,
+we'll determine the avg number of hours per function point as if the total UFP was 51 instead.
+
+---
+
+First, we we determined project 2's avg hours/FP to be 2.51. Combined with project 1's hours/FP, we determined the average
+between the two to be 2.46 hours/FP, which we'll use for estimating project 3.
+
+We then estimated the work hours as follows:
+
+UFP
+ -inputs
+  -word entries for Anagram minigame: 3 (complexity)
+  -user confirmation to start minigame: 3
+  
+ -outputs
+  -display game board with player piece: 4
+  -display Anagrams minigame (time left, word bank): 5
+  -display minigame results: 4
+  -display win when player reaches the end: 4
+  
+ -inquiries
+  -word database to verify user input is a word: 4
+  
+ -master files
+  -Anagrams.js to process word inputs: 7
+  
+ -UFP total = 34
+
+DI
+ -technical factors (that aren't 0)
+  -end-user efficiency: 3
+  -ease of operation: 2
+  
+ -DI total = 5
+ 
+TCF = .65 + .01(5) = .7
+
+FP = 36 * .7 = 23.8
+
+Work Hours = 23.8 * 2.46 = 58.55 hours
+
+We estimate that project 3 will take approximately 58.55 hours to complete.
