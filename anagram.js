@@ -43,7 +43,7 @@ function validLetters() {
             break;
         }
     }
-    if (isWord(userInput.toLowerCase()) && match) {
+    if (isWord(userInput.toLowerCase()) && match && (userInput.length >= 3)) {
         container3.textContent=true;
     }
     else {
