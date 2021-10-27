@@ -32,4 +32,6 @@ Oct-24
 Oct-25
   --Anna:         3:30
   --Team Meeting: 4:50
-  --Yuri:         2:39
+  
+Oct-26
+  --Yuri:         3:14
