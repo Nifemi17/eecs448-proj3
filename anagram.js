@@ -50,7 +50,7 @@ function validLetters() {
         container3.textContent=false;
     }
     console.log(match);
-    console.log(isWord(userInput.toLowerCase()))
+    console.log(userInput, "is a word: ", isWord(userInput.toLowerCase()))
     lengthChecker();
 }
 
