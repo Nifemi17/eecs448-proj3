@@ -13,7 +13,8 @@
 </head>
 <div id="randoLetters" align = "center" style="margin-top:10%; margin-left: 45%; margin-bottom: 18px; padding: 10px; font-size: 25px;">RANDOM LETTERS HERE</div>
 <div id="result" align = "center" style="margin-bottom: 10px; margin-left: 45%;">Result</div>
-<div id="countdown" align = "center"></div>
+<div id="countdown" align = "center" style="margin-bottom: 10px"></div>
+<div id="longWord" align = "center"></div>
 <body>
   <script src="main.js"></script>
   <script src="board.js"></script>
@@ -32,6 +33,7 @@ style="position: absolute; left: 20%; margin-left:-220px; top: 30%; margin-top:-
   	//wordArray stores all words from the list of words referenced in wordCheck.js
 	let wordArray = [];
 	let longest = '';
+  let isTurn = false;
 
     let canvas = document.getElementById('gameCanvas');
 	let context = canvas.getContext('2d');
@@ -52,7 +54,7 @@ style="position: absolute; left: 20%; margin-left:-220px; top: 30%; margin-top:-
     <input class="large" id= "inputWord" type="text" name="nw" style ="margin-bottom: 10px; margin-left: 45%;" onkeydown="pressEnter(event)">
   </div>
   <div class="submit" align="left">
-   <div align = "center"> <input type="button"  value="Click to start turn" onclick="letters(); startTimer() ; setTimeout( function() { playGame(); }, 15000);" style ="background-color: #f2f239; margin-left: 45%;"><div>
+   <div align = "center"> <input type="button"  value="Click to start turn"  onclick="clickToStart();" style ="background-color: #f2f239; margin-left: 45%;"><div>
 </div>
 </html>
 <div id="winMessage" align="center" style="position: relative;">win message here</div>
