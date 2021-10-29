@@ -4,10 +4,12 @@ function printWin() {
 
 function playGame()
 {
-    word = lengthChecker();
-    setPos(word,1);
+    setPos(longest.length,1);
 	if (boardArr[boardArr.length - 1] != 0) {
 		printWin();
 	}
+	
+	userInput = '';
+	longest = '';
 }
 

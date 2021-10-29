@@ -21,7 +21,7 @@ function setPos(wordLength, Pidentifier)
     boardArr[oldPos + wordLength ] = 1;
     for (let i = 0; i < 30; i++) 
     {
-        console.log(boardArr[i]);
+        console.log("boardArr[", i, "]:", boardArr[i]);
     }
 }
 function getPos(Pidentifier)

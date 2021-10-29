@@ -45,13 +45,15 @@ function validLetters() {
     }
     if (isWord(userInput.toLowerCase()) && match && (userInput.length >= 3)) {
         container3.textContent=true;
+		longest = lengthChecker();
+		
     }
     else {
         container3.textContent=false;
+		userInput = '';
     }
     console.log(match);
     console.log(userInput, "is a word: ", isWord(userInput.toLowerCase()))
-    lengthChecker();
 }
 
 
@@ -71,15 +73,13 @@ function clearUserInput() {
 
 function lengthChecker()
 {
-let longest =0;
-let LongWord;
-if (userInput.length > longest)
-{
-    longest = userInput.length;
-    LongWord = userInput;
-    console.log(longest);
-}
-return longest;
+	if (userInput.length > longest.length)
+	{
+		
+		return userInput;
+	}
+	
+	return longest;
 }
 
 
