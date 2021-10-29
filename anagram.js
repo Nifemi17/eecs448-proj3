@@ -5,7 +5,6 @@ function clickToStart(){
 		longest = '';
         letters(); 
         startTimer() ; 
-        setTimeout( function() { playGame(); }, 15000);
     }
     else {
         console.log("Timer going now");
@@ -68,8 +67,8 @@ function validLetters() {
 		userInput = '';
         redX();
     }
-    console.log(match);
-    console.log(userInput, "is a word: ", isWord(userInput.toLowerCase()))
+    console.log("user input has valid letters:", match);
+    console.log("user input is an english word > 3 letters: ", isWord(userInput.toLowerCase()))
     document.getElementById("longWord").innerHTML = "Longest word is: " + longest;
 }
 
@@ -79,8 +78,14 @@ function pressEnter(e){
     var keyCode = e.code || e.key;
     if (keyCode == 'Enter'){
       // Enter pressed
-      validLetters();
-      clearUserInput();
+	  if (isTurn == true) {
+		validLetters();
+	  }
+	  
+	  else {
+		  console.log("Word input error: isTurn == false");
+	  }
+	  clearUserInput();
     }
   }
 
@@ -103,11 +108,15 @@ function lengthChecker()
 
 function startTimer()
  {
-    var timeleft = 15;
+	//1 1-sec interval + 14 1-sec intervals = 15-sec timer
+    var timeleft = 14;
+	document.getElementById("countdown").innerHTML = (timeleft + 1) + " seconds remaining";
+	
     var downloadTimer = setInterval(function(){
     if(timeleft <= 0){
       clearInterval(downloadTimer);
       document.getElementById("countdown").innerHTML = "Finished";
+	  playGame();
     } else {
       document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
     }
