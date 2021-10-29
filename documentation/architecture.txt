@@ -1,3 +1,7 @@
--This is where we'll explain our software architecture of our prototype (within context of design paradigm)
+For project 3, the design paradigm we chose was the Functional Design paradigm. We chose this because we designed the program around a functional viewpoint. The software architecture of our prototype for project 3 is the 3-Tier architecture, the three tiers being the presentation tier, logic tier, and data tier.
 
--250-350 words, 5% total grade
+The presentation is the front-end of the program, including the interaction between the user and the anagram game and the presentation of the other aspects of the game, those being the game board, player pieces, and the random anagram letters. 
+
+The logic tier is the largest tier of our architecture, especially because we designed the program from a functional perspective. For the prototype, there are essentially two sets of functions. One set is for the anagram game to run, process user input and ensure it is valid,  and find the length of  the longest valid word for the piece to move. The other set is to use the length to move the player piece on the board. For project 4, we anticipate another set of functions to keep track of the players, their movement, the turn, and the overall game play. 
+
+The data tier of the architecture is the database of words we used for the anagram game. Once the user inputs a word, it is checked not only for validity of letters, the word is checked if it is a real word. We access a large file and check if the word is in the file. This file is the data of our program. Typical 3-tier architectures have the tiers running as independent modules. Our tiers for this project are not completely independent, as they rely on one another, but they are separated in some ways.
