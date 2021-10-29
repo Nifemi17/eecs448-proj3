@@ -5,32 +5,29 @@
 //variable context = gameCanvas's context
 
 /**
-* returns true if the passed string str is a word on the word list.
+* returns true if the passed string str is a word on the word list (wordArr).
+* @param str the word string to be chekced
 */
 function isWord(str) {
 	return wordArray.includes('\n' + str + '\r');
 }
 
 /**
-* @pre str's value starts with '\n' and ends with '\r'
-* creates a string and then calls isWord to check if it's in the word list. prints the result.
-* Just tests that str is successfully checked as a word or not.
+* @brief Tests that the database file was successfully copied by checking for a  predetermined word.
 */
 function wordCheckTest() {
-	//word to be checked. it MUST start with \n and end with \r in order to work
-	var str = '\nzwitterion\r';
+	var str = 'zwitterion';
+	var result;
 
 	//check if file contains the word Hello
-	var hasString = isWord(str);
-	console.log('finished checking word');
-
-	//prints to canvas if str is a word or not
-	if (hasString || str == '\na\r' || str == '\nzwitterionic\r') {
-		//context.fillText(str + 'is a word', 100, 120);
+	if (isWord(str)) {
+		result = "PASS";
 	}
+	
 	else {
-		//context.fillText(str + 'is not a word', 100, 120);
-	}	
+		result = "FAIL";
+	}
+	console.log('Testing wordArray using word zwitterion:', result);	
 }
 
 /**
