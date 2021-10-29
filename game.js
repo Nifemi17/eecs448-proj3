@@ -11,5 +11,6 @@ function playGame()
 	
 	userInput = '';
     isTurn = false;
+	clearPic();
 }
 
