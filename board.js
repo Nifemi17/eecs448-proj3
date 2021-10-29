@@ -30,12 +30,17 @@ function setPos(wordLength, Pidentifier)
                 }
         }
     }
-    boardArr[oldPos + wordLength ] = 1;
+
     if((oldPos + wordLength) > 29)
     {
+		boardArr[29] = Pidentifier;
         context.fillStyle = "red";
         context.fillRect(460,20,15,15);
     }
+	
+	else { 
+		boardArr[oldPos + wordLength ] = 1;
+	}
     for (let i = 0; i < 30; i++) 
     {
         if(boardArr[i] == Pidentifier)
@@ -66,6 +71,7 @@ function setPos(wordLength, Pidentifier)
         console.log("boardArr[", i, "]:", boardArr[i]);
     }
 }
+
 function getPos(Pidentifier)
 {
     let PlayerPos = 0;
