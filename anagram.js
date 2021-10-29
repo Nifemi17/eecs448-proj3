@@ -1,6 +1,8 @@
 function clickToStart(){
     if(isTurn == false) {
         isTurn = true;
+		document.getElementById("longWord").innerHTML = "Longest word is: ";
+		longest = '';
         letters(); 
         startTimer() ; 
         setTimeout( function() { playGame(); }, 15000);

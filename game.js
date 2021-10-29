@@ -10,7 +10,6 @@ function playGame()
 	}
 	
 	userInput = '';
-	longest = '';
     isTurn = false;
 }
 
