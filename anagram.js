@@ -18,8 +18,12 @@ function letters(){
     var result           = '';
     var characters       = 'AAAAAAAAABBCCDDDDEEEEEEEEEEEEFFGGGHHIIIIIIIIIJKLLLLMMNNNNNNOOOOOOOOPPQRRRRRRSSSSTTTTTTUUUUVVWWXYYZ';
     var charactersLength = characters.length;
+    var randomNum        = 0;
     for ( var i = 0; i < 10; i++ ) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        randomNum = Math.floor(Math.random() * charactersLength)
+        result += characters.charAt(randomNum);
+        characters = characters.slice(0, randomNum) + characters.slice(randomNum+1, charactersLength);
+        charactersLength = characters.length;
     }
     console.log(result);
 
@@ -28,13 +32,13 @@ function letters(){
 }
 
 
+
 var userInput = '';
 function validLetters() {
     var letters = '';
     
     let container1 = document.getElementById("randoLetters");
     let container2 = document.getElementById("inputWord");
-    let container3 = document.getElementById("result");
     userInput = container2.value.toUpperCase();
     letters = container1.textContent;
 
@@ -57,13 +61,12 @@ function validLetters() {
         }
     }
     if (isWord(userInput.toLowerCase()) && match && (userInput.length >= 3)) {
-        container3.textContent=true;
 		longest = lengthChecker();
-		
+		greenCheck();
     }
     else {
-        container3.textContent=false;
 		userInput = '';
+        redX();
     }
     console.log(match);
     console.log(userInput, "is a word: ", isWord(userInput.toLowerCase()))
@@ -111,3 +114,18 @@ function startTimer()
     timeleft -= 1;
     }, 1000);
  }
+
+ function greenCheck() {
+    var div = document.getElementById('resultPic');
+    div.innerHTML = '<img src="images/greenCheck.png" style="width:100px; height:auto; margin-top: 40px; margin-left: 45%;" />';
+ }
+
+ function redX() {
+    var div = document.getElementById('resultPic');
+    div.innerHTML = '<img src="images/redX.png" style="width:100px; height:auto; margin-top: 40px; margin-left: 45%;" />';
+ }
+
+function clearPic() {
+    var div = document.getElementById('resultPic');
+    div.innerHTML = '<img src="" />';
+}
