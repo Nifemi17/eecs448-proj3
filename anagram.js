@@ -5,7 +5,7 @@ function clickToStart(){
 		longest = '';
         letters(); 
         startTimer() ; 
-        setTimeout( function() { playGame(); }, 15000);
+        setTimeout( function() { playGame(); }, 16000);
     }
     else {
         console.log("Timer going now");
