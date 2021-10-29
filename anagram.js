@@ -18,14 +18,19 @@ function letters(){
     var result           = '';
     var characters       = 'AAAAAAAAABBCCDDDDEEEEEEEEEEEEFFGGGHHIIIIIIIIIJKLLLLMMNNNNNNOOOOOOOOPPQRRRRRRSSSSTTTTTTUUUUVVWWXYYZ';
     var charactersLength = characters.length;
+    var randomNum        = 0;
     for ( var i = 0; i < 10; i++ ) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        randomNum = Math.floor(Math.random() * charactersLength)
+        result += characters.charAt(randomNum);
+        characters = characters.slice(0, randomNum) + characters.slice(randomNum+1, charactersLength);
+        charactersLength = characters.length;
     }
     console.log(result);
 
     let container = document.getElementById("randoLetters");
     container.textContent=result;
 }
+
 
 
 var userInput = '';
