@@ -18,3 +18,33 @@ Oct-20 1:00pm - 2:04pm
     requirements will be fulfilled by project 3's prototype.
   --TASKS:
     --Yuri: send GTAs an email describing our application, with the artifact attached.
+	
+Oct-22 4:00pm - 5:36pm
+  --ATTENDEES: Nifemi, Yuri, Anna
+  --Discussed the categorizations of our requirements into components and structure of our data management.
+  --2 components: 1 for the Anagrams minigame and 1 for the game board.
+  --TASKS:
+    --Anna: begin working on the random letter generator to populate the anagrams letter bank
+	--Nifemi: design and implement a simple game board for the prototype
+	--Yuri: implement a word database to compare player word inputs to
+	
+Oct-24 8:00pm - 10:00pm
+  --ATTENDEES: All
+  --Conducted a small stand-up of everyone's task progress
+  --Discussed the documentation portion of the rubric and delegated tasks to fulfill it.
+    --Paradigm: function-oriented
+	--Architecture: 3-Tier
+	--UML Diagram: Activity
+  --Discussed the team's performance and possible ways to improve it.
+    --We are considering using Trello to track everyone's tasks a little easier.
+  --TASKS:
+    --Rudro: Finish the UML diagram
+	--Anna: Finish our explanation for the design architecture, continue working on the anagrams minigame
+	--Yuri: Finish our explanation for the design paradigm.
+	--Nifemi: Continue working on the game board and player piece.
+	--Michael: Continue working on implementing the anagrams minigame timer.
+	
+Oct-28 7:30pm - 10:00pm
+  --ATTENDEES: All
+  --Collaborated with each other to finish the player movement (Nifemi, Michael, Rudro) and the
+    anagrams minigame (Anna, Yuri)
