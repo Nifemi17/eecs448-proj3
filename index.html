@@ -15,7 +15,6 @@
 <div id="countdown" align = "center" style="margin-bottom: 10px"></div>
 <div id="longWord" align = "center"></div>
 <body>
-  <script src="main.js"></script>
   <script src="board.js"></script>
   <script src="wordCheck.js"></script>
   <script src="anagram.js"></script>
@@ -39,9 +38,7 @@ style="position: absolute; left: 20%; margin-left:-220px; top: 30%; margin-top:-
 	//hands control to main.js after DOM content is loaded and parsed.
     document.addEventListener('DOMContentLoaded', () => {
 	  console.log('DOM finished loading/parsing');
-	  
-	  //defined in main.js
-	  startGame();
+
     printBoard();
     wordPrep();
 	  });
