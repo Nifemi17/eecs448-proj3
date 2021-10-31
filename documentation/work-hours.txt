@@ -50,3 +50,6 @@ Oct-28
 Oct-29
   --Yuri:         2:57
   --Nifemi:       2:00
+  
+Oct-30
+  --Yuri:         2:41
