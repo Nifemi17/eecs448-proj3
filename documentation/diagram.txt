@@ -1,4 +1,0 @@
--placeholder for UML diagram file (will probably switch to a pdf or something depending
- on what we use to draw it.
- 
--5% total grade
