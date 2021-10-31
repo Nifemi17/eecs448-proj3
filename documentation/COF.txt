@@ -6,9 +6,9 @@
   -Calculate/display list of random letters (10 – letters carried over) for player to use
   -Carry over letters not used each turn
   -Let user input words for 15 seconds - Prototype
-  -Allow one reset of letter choices per turn
+  -Allow one reset of letter choices per turn (tracked by reset flag)
   -Verify valid input by comparing to a dictionary database and list of letters - Prototype
-  -Display time left, reset flag, current longest word, and list of letters to be used - Prototype
+  -Display time left, current longest word, and list of letters to be used - Prototype
   -At time out, calculate spaces the player will move based on longest word’s length - Prototype
 
 --Board--
