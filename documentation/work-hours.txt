@@ -38,9 +38,11 @@ Oct-25
   
 Oct-26
   --Yuri:         3:14
+  --Rudro:        0:20
 
 Oct-27
   --Yuri:         1:48
+  --Rudro:        0:30
   
 Oct-28
   --Team Meeting: 2:30
@@ -54,3 +56,6 @@ Oct-29
   
 Oct-30
   --Yuri:         2:41
+  
+Oct-31
+  --Rudro:        0:35
