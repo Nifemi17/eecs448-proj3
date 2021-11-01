@@ -1,4 +1,24 @@
--This is where we'll explain the design patterns we used (for our prototype? I assume so but the project writeup
- didn't specify)
+We used a Singleton Design Pattern for implementing the word database in wordCheck.js. After some 
+research, it seemed like we wouldn’t create enough requests to cause runtime lag. However, since 
+JQuery.get() copies the file’s text into a single string, we wanted to see if we could just pull 
+the contents once and copy them into an array of chars. So, we created a global array called 
+wordArray and defined a function that copied the text file into wordArray. This ended up perfectly 
+fulfilling our requirements for a word check, and thus acted as our singleton replacing the need 
+to create a new string for every word check.
 
--250-350 words, 5% total grade
+Since handling the Anagrams minigame involved multiple event listeners and inputs, we used an Observer 
+design pattern to build Anagrams.js’s methods. We had two events that needed to be watched: when 
+the button to start the minigame has been pressed, and when the player presses enter in the text 
+field after entering a word. We thus created two methods to act like publishers, pressEnter and 
+clickToStart. These two methods ensured that the event happened at/in the correct moment/order, and 
+called subscriber-like functions to handle the corresponding inputs for the game.
+
+For implementing the board.js, the team went forward with the behavioral pattern. The board.js has 
+all the necessary functions like getPos, printPos and printBoard which handle the work related to 
+player's movement on the board. The board.js has the empty array for setting up the board and initial 
+position for the player. In specific, the Mediator pattern applies to our implementation as we made 
+sure that there was a bridge in between for the player and the board to connect together for the overall 
+game functionality. In playGame function in Game.js file, the player's initial position is set as setPos 
+func is called. Later on, the entire dynamics of the game is built up with player's movement on the 
+board after each word formation. If the player is able to form a long word, then only the player's piece 
+is able to move on the board.
