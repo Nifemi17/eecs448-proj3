@@ -39,6 +39,11 @@ function setPos(wordLength, Pidentifier)
     }
 	
 	else { 
+		if (boardArr[oldPos + wordLength] > 4) {
+			oldPos += wordLength;
+			wordLength = getRepositionValue(oldPos);
+		}
+		
 		boardArr[oldPos + wordLength ] = 1;
 	}
     for (let i = 0; i < 30; i++) 
