@@ -141,3 +141,23 @@ function clearPic() {
     var div = document.getElementById('resultPic');
     div.innerHTML = '<img src="" />';
 }
+
+
+function shuffleLetters()
+{
+    let container = document.getElementById("randoLetters");
+    let word = '';
+    word = container.textContent;
+    var arr = word.split('');
+    var n = arr.length;
+    for (var i = 0; i < n-1; ++i)
+    {
+        var j = Math.floor(Math.random() * n);
+        var temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    var shuffledWord = '';
+    shuffledWord = arr.join('');
+    container.textContent = shuffledWord;
+}
