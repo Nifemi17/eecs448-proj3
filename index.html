@@ -16,6 +16,7 @@
 <div id="longWord" align = "center"></div>
 <body>
   <script src="board.js"></script>
+  <script src="specSpaces.js"></script>
   <script src="wordCheck.js"></script>
   <script src="anagram.js"></script>
   <script src="game.js"></script>
@@ -40,6 +41,7 @@ style="position: absolute; left: 20%; margin-left:-220px; top: 30%; margin-top:-
 	  console.log('DOM finished loading/parsing');
 
     printBoard();
+	setSpecialSpaces();
     wordPrep();
 	  });
   </script>
