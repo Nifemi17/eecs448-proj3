@@ -1,44 +1,38 @@
 let boardArr = [];
-for(let i = 29; i >= 0; i--)
+for(let i = 99; i >= 0; i--)
     {
         boardArr[i] = 0;
     }
 
 function setPos(wordLength, Pidentifier)
 {
-    context.clearRect(5,100,15,15)
+    context.clearRect(5,380,15,15)
+    movePlayer(wordLength, Pidentifier)
     console.log(wordLength);
+}
+function movePlayer(wordLength, Pidentifier)
+{
     let oldPos = getPos(Pidentifier);
-    console.log(oldPos);
-    for (let i = 0; i < 30; i++) 
+    for (let i = 0; i < 100; i++) 
     {
-        //console.log(boardArr[i]);
         if (boardArr[i] == Pidentifier)
         {
             boardArr[i] = 0;
-            if(i >= 0 && i< 10)
-                {
-                    context.clearRect(i*50 + 5,100,15,15);
-                }
-                else if(i>=10 && i < 20)
-                {
-                    context.clearRect((20 -i)*50 -45,60,15,15)
-                }
-                else
-                {
-                    context.clearRect(((i-20)*50)+5 ,20,15,15)
-                }
+            context.clearRect(0,0,canvas.width, canvas.height)
+            printBoard()
+            printPos()
+            context.clearRect(5,380,15,15)
+            // To Yuri, you can call the funciton here again hopefully that works
         }
     }
-
-    if((oldPos + wordLength) > 29)
+    boardArr[oldPos + wordLength ] = 1;
+    if((oldPos + wordLength) > 99)
     {
-		boardArr[29] = Pidentifier;
+        boardArr[99] = 1;
         context.fillStyle = "red";
-        context.fillRect(460,20,15,15);
+        context.fillRect(5,20,15,15);
     }
-	
-	else { 
+    else { 
 		if (boardArr[oldPos + wordLength] > 4) {
 			oldPos += wordLength;
 			wordLength = getRepositionValue(oldPos);
@@ -46,37 +40,27 @@ function setPos(wordLength, Pidentifier)
 		
 		boardArr[oldPos + wordLength ] = 1;
 	}
-    for (let i = 0; i < 30; i++) 
+    for (let row = 0; row < 10; row++) 
     {
-        if(boardArr[i] == Pidentifier)
+        for (let col = 0; col < 10; col++) 
         {
-                if(i >= 0 && i< 10)
+            spot = (row*10)+col;
+            if(boardArr[spot] == Pidentifier)
+            {   
+                context.fillStyle = "red"
+                if(row%2 == 0)
                 {
-                    context.fillStyle = "red"
-                    context.fillRect((i*50) +5,100,15,15)
+                    context.fillRect(5 + col*50 ,380 -(row*40),15,15)
                 }
-                else if(i>=10 && i < 20)
+                else if (row%2 == 1)
                 {
-                    context.fillStyle = "red"
-                    context.fillRect((20 -i)*50 -45,60,15,15)
+                    context.fillRect(455- col*50 ,340 - ((row-1)*40),15,15)
                 }
-                else 
-                {
-                    console.log("here or are we")
-                    console.log(((i-20)*50)+10)
-                    context.fillStyle = "red"
-                    console.log(i)
-                    context.fillRect(((i-20)*50)+5 ,20,15,15)
-                    context.stroke()
-                }
+            }
         }
     }
-    for (let i = 0; i < 30; i++) 
-    {
-        console.log("boardArr[", i, "]:", boardArr[i]);
-    }
+    
 }
-
 function getPos(Pidentifier)
 {
     let PlayerPos = 0;
@@ -93,25 +77,20 @@ function getPos(Pidentifier)
 function printPos()
 {
     context.fillStyle = "red"
-    context.fillRect(5,100,15,15)
+    context.fillRect(5,380,15,15)
     let pos = 1;
-    for (let row = 0; row < 3; row++) 
+    for (let row = 0; row < 10; row++) 
     {
         for (let col = 0; col < 10; col++) 
         {
             context.fillStyle = "black"
-            if(row == 0)
+            if(row % 2 == 0)
             {
-                context.fillText(pos,5 + col*50 ,90);
-                
+                context.fillText(pos,5 + col*50 ,370 -(row*40));
             }
-            else if (row == 1 )
+            else if (row % 2 == 1 )
             {
-                context.fillText(pos,455- col*50 ,50);
-            }
-            else
-            {
-                context.fillText(pos,5+ col*50 ,10);
+                context.fillText(pos,455- col*50 ,330 - ((row-1)*40));
             }
             pos++;
         }
@@ -122,26 +101,18 @@ function printBoard()
 {
     context.beginPath();
     context.moveTo(0,0);
-
     context.lineTo(500,0);
-    context.lineTo(500,120);
-    context.lineTo(0,120);
+    context.lineTo(500,400);
+    context.lineTo(0,400);
     context.lineTo(0,0);
-
-    /**context.moveTo(100,150);
-
-    context.lineTo(600,150);
-    context.lineTo(600,270);
-    context.lineTo(100,270);
-    context.lineTo(100,150);*/
-    for (let row = 0; row < 3; row++) 
+    for (let row = 0; row < 10; row++) 
     {
         context.moveTo(0,((row+1)*40));
         context.lineTo(500,((row+1)*40));
         for (let col = 0; col < 10; col++) 
         {
             context.moveTo((col+1)*50 , 0);
-            context.lineTo((col+1)*50 , 120);
+            context.lineTo((col+1)*50 , 400);
         }
     }
     context.strokeStyle = 'black';
@@ -149,12 +120,4 @@ function printBoard()
     context.stroke();
     context.closePath();
     printPos();
-    
-    /**boardArr[4] = 1;
-    work = getPos(1);
-    setPos(4,1);
-    newPos = getPos(1)
-    console.log(newPos)
-    console.log(work);*/
-
 }
