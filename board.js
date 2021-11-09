@@ -6,40 +6,35 @@ for(let i = 99; i >= 0; i--)
 
 function setPos(wordLength, Pidentifier)
 {
-    //context.clearRect(5,380,15,15)
     movePlayer(wordLength, Pidentifier)
     console.log(wordLength);
 }
 function movePlayer(wordLength, Pidentifier)
 {
     let oldPos = getPos(Pidentifier);
+	
     for (let i = 0; i < 100; i++) 
     {
         if (boardArr[i] == Pidentifier)
         {
             boardArr[i] = 0;
-/*             context.clearRect(0,0,canvas.width, canvas.height)
-            printBoard()
-            printPos()
-            context.clearRect(5,380,15,15) */
-            // To Yuri, you can call the funciton here again hopefully that works
         }
     }
-    // boardArr[oldPos + wordLength ] = 1;
+
     if((oldPos + wordLength) > 99)
     {
-        boardArr[99] = 1;
+        boardArr[99] = Pidentifier;
         context.fillStyle = "red";
         context.fillRect(5,20,15,15);
     }
-    else { 
-		if (boardArr[oldPos + wordLength] > 4) {
-			oldPos += wordLength;
-			wordLength = getRepositionValue(oldPos);
-		}
-		
-		boardArr[oldPos + wordLength ] = 1;
+
+    else if (boardArr[oldPos + wordLength] > 4) { 
+		oldPos += wordLength;
+		wordLength = getRepositionValue(oldPos);
 	}
+	
+	boardArr[oldPos + wordLength ] = Pidentifier;
+	
     for (let row = 0; row < 10; row++) 
     {
         for (let col = 0; col < 10; col++) 

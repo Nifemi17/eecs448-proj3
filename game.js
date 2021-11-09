@@ -11,7 +11,6 @@ function playGame()
 		printWin();
 	}
 	
-
 	printBoard();
 	drawSpecialSpaces();
 	userInput = '';
