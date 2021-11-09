@@ -4,11 +4,16 @@ function printWin() {
 
 function playGame()
 {
+	context.clearRect(0,0,canvas.width,canvas.height);
     setPos(longest.length,1);
+	
 	if (boardArr[boardArr.length - 1] != 0) {
 		printWin();
 	}
 	
+
+	printBoard();
+	drawSpecialSpaces();
 	userInput = '';
     isTurn = false;
 	clearPic();

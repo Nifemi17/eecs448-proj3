@@ -6,7 +6,7 @@ for(let i = 99; i >= 0; i--)
 
 function setPos(wordLength, Pidentifier)
 {
-    context.clearRect(5,380,15,15)
+    //context.clearRect(5,380,15,15)
     movePlayer(wordLength, Pidentifier)
     console.log(wordLength);
 }
@@ -18,14 +18,14 @@ function movePlayer(wordLength, Pidentifier)
         if (boardArr[i] == Pidentifier)
         {
             boardArr[i] = 0;
-            context.clearRect(0,0,canvas.width, canvas.height)
+/*             context.clearRect(0,0,canvas.width, canvas.height)
             printBoard()
             printPos()
-            context.clearRect(5,380,15,15)
+            context.clearRect(5,380,15,15) */
             // To Yuri, you can call the funciton here again hopefully that works
         }
     }
-    boardArr[oldPos + wordLength ] = 1;
+    // boardArr[oldPos + wordLength ] = 1;
     if((oldPos + wordLength) > 99)
     {
         boardArr[99] = 1;
