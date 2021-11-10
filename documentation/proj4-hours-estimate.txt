@@ -1,0 +1,51 @@
+Project 3's total hours (60.92) ended up being pretty close to the estimate (58.55). This suggests 
+that we're getting better at estimating how much time we spend on these projects, but since this is
+the first time, we could have just guessed correctly. A trend of accurate estimations would be a much
+better indicator. 
+
+Still, we have been able to more accurately identify the complexity of the UFP components. Our 
+"average" component did take longer to finish than most of the "simple" ones, with the exception of 
+the game board with player piece. In fact, if that component had been set to "average", the estimate
+would have been very close to the total hours (60.27 compared to 60.92 total).
+
+---
+
+The avg hours/FP for project 3 is 2.56. combined with project 1 (2.41) and 2 (2.51), the current 
+average for the semester is approximately 2.49 hours/FP
+
+UFP
+  -inputs
+    -button to shuffle letters:          3 (complexity)
+	-number of players:                  3
+	-player color choice:                3 
+	
+  -outputs
+    -multiple pieces on board:           5
+	-background theme/animation:         4
+	-10x10 game board w/ special spaces: 5
+	-Carry over unused letters:          5
+	-game prep screen:                   4
+	
+  -Master files
+    -special spaces logic:               7
+
+  -UFP total = 9 + 23 + 7 = 39
+  
+DI
+  -technical factors (that aren't 0)
+    -end-user efficiency:         3
+	-ease of operation:           2
+	
+  -DI total = 5
+  
+TCF = .65 * .05 = .7
+
+FP = 39 * .7 = 27.3
+
+total hours = 27.3 * 2.49 = 67.98
+
+We predict that project 4's application will take 67.98 hours to complete. By the nature of function-point
+analysis, however, this doesn't cover the time it will take to make the deployment and maintenance 
+plans. Considering that each will probably take some research, we predict that project 4 in its entirety 
+will take 71.98 hours to complete.
+
