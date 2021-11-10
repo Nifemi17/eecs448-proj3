@@ -59,7 +59,7 @@ function movePlayer(wordLength, Pidentifier)
 function getPos(Pidentifier)
 {
     let PlayerPos = 0;
-    for (let i = 0; i < 30; i++) 
+    for (let i = 0; i < 100; i++) 
     {
         if (boardArr[i] == Pidentifier)
         { 
