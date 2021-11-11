@@ -18,3 +18,13 @@ function playGame()
 	clearPic();
 }
 
+function setPlayers(num) {
+	numPlayers = num;
+	console.log(numPlayers);
+	document.getElementById("introBox").innerHTML = '<style= "display: hidden;/>';
+	document.getElementById("mainCan").style.display = '';
+	document.getElementById("mainGame").style.display = '';
+	document.getElementById("randoLetters").style.display = '';
+	document.getElementById("countdown").style.display = '';
+	document.getElementById("longWord").style.display = '';
+}

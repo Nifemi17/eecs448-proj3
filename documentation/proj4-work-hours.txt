@@ -5,13 +5,16 @@ Nov-5
   --Michael:      1:30
   --Yuri:         5:17
 
-Nove-8
+Nov-8
   --Rudro:        1:00
   --Yuri:         0:27
+  --Anna:         1:00
   
 Nov-9
   --Team Meeting: 0:50
   --Yuri:         3:09
+  --Anna:         1:00
   
 Nov-10
   --Yuri:         1:06
+  --Anna:         2:00

@@ -2,3 +2,15 @@
 input {padding: 20px; background-color: #f1ef6b; margin: 4px 2px;}
 
 body {background-color: whitesmoke}
+
+#settingsModal{
+    width: 500px;
+    height: 400px;
+    z-index: 100;
+    display: block;
+    position: fixed;
+    background-color: #f0f0f0;
+    border: 2px solid black ;
+    margin-left: 30%;
+    background-color: cornflowerblue;
+}
