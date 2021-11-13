@@ -14,48 +14,54 @@
 <div id="countdown" align = "center" style="margin-bottom: 10px;"> </div>
 <div id="longWord" align = "center">  </div>
 <body>
-  <script src="board.js"></script>
-  <script src="specSpaces.js"></script>
-  <script src="wordCheck.js"></script>
-  <script src="anagram.js"></script>
-  <script src="game.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="board.js"></script>
+    <script src="specSpaces.js"></script>
+    <script src="wordCheck.js"></script>
+    <script src="anagram.js"></script>
+    <script src="game.js"></script>
+    <script src="player.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
-  <div id="introBox" style="margin-top: 200px;">
-    <div id="settingsModal"><h1 align="center" style="font-size: 30px;">Welcome to the new and improved snakes and ladders!</h1>
-      <h4 style="font-size: 15px; margin-left: 10px; margin-right: 10px;"> This game is a combination of Sorry, Snakes and Ladders, and Anagrams, all simple, well-known games. To being, select the 
-        number of players you have. Then start your turn. You have 15 seconds to come up with a minimum 3 letter word from the random
-      letters. The length of the word is the how many spaces you get to move. blah blah blah</h4>
-      <div> <input type="button"  value="2 Players"  onclick="setPlayers(2);" style ="background-color: pink; display: inline; margin-left: 95px;">
-       <input type="button" value="3 Players"  onclick="setPlayers(3);" style ="background-color: pink; display: inline;">
-       <input type="button" value="4 Players"  onclick="setPlayers(4);" style ="background-color: pink; display: inline;"></div>
-      </div>
-      </div>
+    <div id="introBox" style="margin-top: 200px;">
+        <div id="settingsModal">
+            <h1 align="center" style="font-size: 30px;">Welcome to the new and improved snakes and ladders!</h1>
+            <h4 style="font-size: 15px; margin-left: 10px; margin-right: 10px;">
+                This game is a combination of Sorry, Snakes and Ladders, and Anagrams, all simple, well-known games. To begin, select the
+                number of players you have. Then start your turn. You have 15 seconds to come up with a minimum 3 letter word from the random
+                letters. The length of the word is the how many spaces you get to move. blah blah blah
+            </h4>
+            <div>
+                <input type="button" value="2 Players" onclick="setPlayers(2);" style="background-color: pink; display: inline; margin-left: 95px;">
+                <input type="button" value="3 Players" onclick="setPlayers(3);" style="background-color: pink; display: inline;">
+                <input type="button" value="4 Players" onclick="setPlayers(4);" style="background-color: pink; display: inline;">
+            </div>
+        </div>
+    </div>
 
-<div id= "mainCan" style = "display: none;">
-  <canvas id="gameCanvas" width="500" height="400"
-style="position: absolute; left: 20%; margin-left:-220px; top: 30%; margin-top:-100px; border: 1px solid rgb(247, 214, 214);">
-</canvas> 
-</div>
+    <div id="mainCan" style="display: none;">
+        <canvas id="gameCanvas" width="500" height="400"
+                style="position: absolute; left: 20%; margin-left:-220px; top: 30%; margin-top:-100px; border: 1px solid rgb(247, 214, 214);">
+        </canvas>
+    </div>
 
-  <script>
-  	//wordArray stores all words from the list of words referenced in wordCheck.js
-	let wordArray = [];
-	let longest = '';
-  let isTurn = false;
-  let numPlayers = 0;
+    <script>
+        //wordArray stores all words from the list of words referenced in wordCheck.js
+        let wordArray = [];
+        let longest = '';
+        let isTurn = false;
+        let numPlayers = 0;
 
-    let canvas = document.getElementById('gameCanvas');
-	let context = canvas.getContext('2d');
-	//hands control to main.js after DOM content is loaded and parsed.
-    document.addEventListener('DOMContentLoaded', () => {
-	  console.log('DOM finished loading/parsing');
+        let canvas = document.getElementById('gameCanvas');
+        let context = canvas.getContext('2d');
+        //hands control to main.js after DOM content is loaded and parsed.
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM finished loading/parsing');
 
-    printBoard();
-	  setSpecialSpaces();
-    wordPrep();
-	  });
-  </script>
+            printBoard();
+            setSpecialSpaces();
+            wordPrep();
+        });
+    </script>
 </body>	  
 <div id= "mainGame" style = "display: none; margin-top: -120px;"align ="center">
   

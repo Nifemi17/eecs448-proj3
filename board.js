@@ -3,16 +3,10 @@ for(let i = 99; i >= 0; i--)
     {
         boardArr[i] = 0;
     }
-
+// Sets player's position on the board
 function setPos(wordLength, Pidentifier)
 {
-    movePlayer(wordLength, Pidentifier)
-    console.log(wordLength);
-}
-function movePlayer(wordLength, Pidentifier)
-{
     let oldPos = getPos(Pidentifier);
-	
     for (let i = 0; i < 100; i++) 
     {
         if (boardArr[i] == Pidentifier)
@@ -20,21 +14,26 @@ function movePlayer(wordLength, Pidentifier)
             boardArr[i] = 0;
         }
     }
-
     if((oldPos + wordLength) > 99)
     {
         boardArr[99] = Pidentifier;
-        context.fillStyle = "red";
-        context.fillRect(5,20,15,15);
     }
-
     else if (boardArr[oldPos + wordLength] > 4) { 
 		oldPos += wordLength;
 		wordLength = getRepositionValue(oldPos);
 	}
-	
-	boardArr[oldPos + wordLength ] = Pidentifier;
-	
+    boardArr[oldPos + wordLength ] = Pidentifier;
+}
+// Handles the player's movement on the board
+function movePlayer(wordLength, Pidentifier, Pcolor)
+{
+    let oldPos = getPos(Pidentifier);
+    setPos(wordLength,Pidentifier);
+    if((oldPos + wordLength) > 99)
+    {
+        context.fillStyle = Pcolor;
+        context.fillRect(5,20,15,15);
+    }
     for (let row = 0; row < 10; row++) 
     {
         for (let col = 0; col < 10; col++) 
@@ -42,7 +41,8 @@ function movePlayer(wordLength, Pidentifier)
             spot = (row*10)+col;
             if(boardArr[spot] == Pidentifier)
             {   
-                context.fillStyle = "red"
+                context.fillStyle = Pcolor;
+                console.log(spot)
                 if(row%2 == 0)
                 {
                     context.fillRect(5 + col*50 ,380 -(row*40),15,15)
@@ -56,6 +56,28 @@ function movePlayer(wordLength, Pidentifier)
     }
     
 }
+// Just prints the player's position during movement after screen is cleared. 
+ function printPlayers() {
+    for (let row = 0; row < 10; row++) {
+        for (let col = 0; col < 10; col++) {
+
+            spot = boardArr[(row * 10) + col]
+            if (spot > 0 && spot < 5) {
+                drawpiece(pColor[spot], row, col);
+            }
+        }
+    }
+}
+function drawpiece(Cols, row, col) {
+    context.fillStyle = Cols
+    if (row % 2 == 0) {
+        context.fillRect(5 + col * 50, 380 - (row * 40), 15, 15)
+    }
+    else if (row % 2 == 1) {
+        context.fillRect(455 - col * 50, 340 - ((row - 1) * 40), 15, 15)
+    }
+}
+
 function getPos(Pidentifier)
 {
     let PlayerPos = 0;

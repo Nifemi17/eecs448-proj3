@@ -2,24 +2,27 @@ function printWin() {
 	document.getElementById("winMessage").innerHTML = "Player " + boardArr[boardArr.length - 1] + " wins!!";
 }
 
-function playGame()
+function playGame(playerTurn)
 {
-	context.clearRect(0,0,canvas.width,canvas.height);
-    setPos(longest.length,1);
-	
+	console.log("ewe")
+	console.log(playerTurn)
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	movePlayer(longest.length, playerArr[playerTurn+1].ID, playerArr[playerTurn+1].PC);
 	if (boardArr[boardArr.length - 1] != 0) {
 		printWin();
 	}
-	
 	printBoard();
+	printPlayers();
+	context.clearRect(5, 380, 15, 15)
 	drawSpecialSpaces();
 	userInput = '';
-    isTurn = false;
+	isTurn = false;
 	clearPic();
 }
 
 function setPlayers(num) {
 	numPlayers = num;
+	startPlay(numPlayers);
 	console.log(numPlayers);
 	document.getElementById("introBox").innerHTML = '<style= "display: hidden;/>';
 	document.getElementById("mainCan").style.display = '';
