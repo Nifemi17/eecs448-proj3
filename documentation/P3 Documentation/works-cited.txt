@@ -8,3 +8,9 @@ https://stackoverflow.com/questions/39996539/search-inside-txt-file-using-javasc
 
 --Using promises to wait for asynchronous processes (such as JQuery.get()) to finish before continuing
 https://itnext.io/async-and-await-in-javascript-the-extension-to-a-promise-f4e0048964ac
+
+--The sole credit for the animated background goes to the creator Alison Quaglia alone.
+https://dev.to/babib/amazing-pure-html-and-css-background-animations-4dim
+
+--The sole credit for the bursting text background goes to Chris Coyier alone.
+https://css-tricks.com/oprah-burst-title-thing/
