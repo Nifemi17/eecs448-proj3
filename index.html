@@ -1,18 +1,22 @@
 <!doctype html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Anagram Board Game</title>
-  <meta name="description" content="A game that mixes Chutes and Ladders with Anagrams">
-  <meta name="author" content="EECS 448 Team 18">
-  <link rel="stylesheet" href="style.css"> 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Anagram Board Game</title>
+    <meta name="description" content="A game that mixes Chutes and Ladders with Anagrams">
+    <meta name="author" content="EECS 448 Team 18">
+    <link rel="stylesheet" href="style.css">
 </head>
-<div id="randoLetters" align = "center" style="margin-top:10%; margin-left: 45%; margin-bottom: 18px; padding: 10px; font-size: 25px; display: none;">RANDOM LETTERS HERE</div>
-<div id="countdown" align = "center" style="margin-bottom: 10px;"> </div>
-<div id="longWord" align = "center">  </div>
+<div id="randoLetters" align="center"
+    style="margin-top:10%; margin-left: 45%; margin-bottom: 18px; padding: 10px; font-size: 25px; display: none;">RANDOM
+    LETTERS HERE</div>
+<div id="countdown" align="center" style="margin-bottom: 10px;"> </div>
+<div id="longWord" align="center"> </div>
+
 <body>
     <script src="board.js"></script>
     <script src="specSpaces.js"></script>
@@ -26,21 +30,26 @@
         <div id="settingsModal">
             <h1 align="center" style="font-size: 30px;">Welcome to the new and improved snakes and ladders!</h1>
             <h4 style="font-size: 15px; margin-left: 10px; margin-right: 10px;">
-                This game is a combination of Sorry, Snakes and Ladders, and Anagrams, all simple, well-known games. To begin, select the
-                number of players you have. Then start your turn. You have 15 seconds to come up with a minimum 3 letter word from the random
+                This game is a combination of Sorry, Snakes and Ladders, and Anagrams, all simple, well-known games. To
+                begin, select the
+                number of players you have. Then start your turn. You have 15 seconds to come up with a minimum 3 letter
+                word from the random
                 letters. The length of the word is the how many spaces you get to move. blah blah blah
             </h4>
             <div>
-                <input type="button" value="2 Players" onclick="setPlayers(2);" style="background-color: pink; display: inline; margin-left: 95px;">
-                <input type="button" value="3 Players" onclick="setPlayers(3);" style="background-color: pink; display: inline;">
-                <input type="button" value="4 Players" onclick="setPlayers(4);" style="background-color: pink; display: inline;">
+                <input type="button" id="twoP" value="2 Players" onclick="setPlayers(2);"
+                    style="background-color: pink; display: inline; margin-left: 95px;">
+                <input type="button" id="threeP" value="3 Players" onclick="setPlayers(3);"
+                    style="background-color: pink; display: inline;">
+                <input type="button" id="fourP" value="4 Players" onclick="setPlayers(4);"
+                    style="background-color: pink; display: inline;">
             </div>
         </div>
     </div>
 
     <div id="mainCan" style="display: none;">
         <canvas id="gameCanvas" width="500" height="400"
-                style="position: absolute; left: 20%; margin-left:-220px; top: 30%; margin-top:-100px; border: 1px solid rgb(247, 214, 214);">
+            style="position: absolute; left: 20%; margin-left:-220px; top: 30%; margin-top:-100px; border: 1px solid rgb(247, 214, 214);">
         </canvas>
     </div>
 
@@ -62,18 +71,24 @@
             wordPrep();
         });
     </script>
-</body>	  
-<div id= "mainGame" style = "display: none; margin-top: -120px;"align ="center">
-  
-  <div class="element-input">
-    <input class="large" id= "inputWord" type="text" name="nw" style ="margin-bottom: 10px; margin-left: 45%;" onkeydown="pressEnter(event)">
-  </div>
-  <div class="submit" align="left">
-   <div align = "center"> <input type="button"  value="Click to start turn"  onclick="clickToStart();" style ="background-color: #f2f239; margin-left: 45%;"><div>
-   <div align = "center"> <input type="button"  value="Shuffle" onclick="shuffleLetters();" style ="background-color: #f2f239; margin-left: 45%;"><div>
-</div>
-<div id="resultPic"> <img src=""></div>
+</body>
+<div id="mainGame" style="display: none; margin-top: -120px;" align="center">
 
+    <div class="element-input">
+        <input class="large" id="inputWord" type="text" name="nw" style="margin-bottom: 10px; margin-left: 45%;"
+            onkeydown="pressEnter(event)">
+    </div>
+    <div class="submit" align="left">
+        <div align="center"> <input type="button" value="Click to start turn" onclick="clickToStart();"
+                style="background-color: #f2f239; margin-left: 45%;">
+            <div>
+                <div align="center"> <input type="button" value="Shuffle" onclick="shuffleLetters();"
+                        style="background-color: #f2f239; margin-left: 45%;">
+                    <div>
+                    </div>
+                    <div id="resultPic"> <img src=""></div>
+
+                    <h1><a href="#0">Telloble Game by Nifemi, Anna, Yuri, Michael and Rudro!</a></h1>
 
 </html>
 <div id="winMessage" align="center" style="position: relative;"></div>

@@ -14,3 +14,67 @@ body {background-color: whitesmoke}
     margin-left: 30%;
     background-color: cornflowerblue;
 }
+
+
+/* 
+  The sole credit for the animated background goes to the creator Alison Quaglia alone.
+  Link : https://dev.to/babib/amazing-pure-html-and-css-background-animations-4dim
+*/
+html, body {
+    width: 100%;
+    height:100%;
+  }
+  
+  body {
+      background: linear-gradient(-45deg, #ee7752, #f55a96, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+  }
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+
+  /* 
+      The sole credit for the bursting text background goes to Chris Coyier alone.
+      Link : https://css-tricks.com/oprah-burst-title-thing/
+  */
+  h1 { 
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    padding: 1px;
+    font-family: 'Raleway', cursive;
+    font-weight: 100;
+    position: relative;
+    background: linear-gradient(to right, rgb(25, 114, 173), #eee, rgb(70, 58, 139));
+  }
+  h1::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    width: 600px;
+    margin-left: -300px;
+    margin-top: -220px;
+    height: 600px;
+    background: radial-gradient(50% 50%, ellipse closest-side, #444, rgb(36, 38, 172));
+    z-index: -1;
+  }
+  h1 a {
+    background: rgb(77, 115, 173);
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    letter-spacing: 30px;
+    color: white;
+    animation: gradient;
+  }
