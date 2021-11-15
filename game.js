@@ -12,8 +12,8 @@ function playGame(playerTurn)
 		printWin();
 	}
 	printBoard();
-	printPlayers();
 	context.clearRect(5, 380, 15, 15)
+	printPlayers();
 	drawSpecialSpaces();
 	userInput = '';
 	isTurn = false;

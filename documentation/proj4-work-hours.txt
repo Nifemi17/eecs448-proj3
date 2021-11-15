@@ -9,7 +9,8 @@ Nov-8
   --Rudro:        1:00
   --Yuri:         0:27
   --Anna:         1:00
-  
+  --Nifemi:       1:00
+
 Nov-9
   --Team Meeting: 0:50
   --Yuri:         3:09
@@ -18,6 +19,16 @@ Nov-9
 Nov-10
   --Yuri:         1:06
   --Anna:         2:00
+  --Nifemi:       3:00
+
+Nov-11
+  --Nifemi:       3:00
+
+Nov-12
+  --Nifemi:       2:00
 
 Nov-13
   --Rudro:        1:30
+
+Nov-15
+  --Nifemi:       1:00

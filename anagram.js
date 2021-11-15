@@ -148,12 +148,12 @@ function startTimer()
 
  function greenCheck() {
     var div = document.getElementById('resultPic');
-    div.innerHTML = '<img src="images/greenCheck.png" style="width:100px; height:auto; margin-top: 40px; margin-left: 45%;" />';
+    div.innerHTML = '<img src="images/greenCheck.png" style="width:80px; height:auto; margin-top: -80px; margin-left: 85%;" />';
  }
 
  function redX() {
     var div = document.getElementById('resultPic');
-    div.innerHTML = '<img src="images/redX.png" style="width:100px; height:auto; margin-top: 40px; margin-left: 45%;" />';
+    div.innerHTML = '<img src="images/redX.png" style="width:80px; height:auto; margin-top: -80px; margin-left: 85%;" />';
  }
 
 function clearPic() {
