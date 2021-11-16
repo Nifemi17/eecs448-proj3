@@ -1,0 +1,31 @@
+-Finish special spaces - Yuri
+
+-maintenance plan - Michael
+
+-defect tool - Rudro
+
+-swap players - Anna
+
+-test suite - Yuri
+
+-comments:
+	-specSpaces.js / wordCheck.js / game.js- Yuri
+	-Board.js/Player.js - Nifemi
+	-Anagrams.js - Anna
+	-index.html / css file - Rudro
+
+-integration strategy - Michael
+
+-deployment plan - Rudro
+
+-code review - Nifemi
+
+-starting position - Anna
+
+-print who's turn it is - Michael
+
+-special space legend - Yuri
+
+--video--
+-Editing - Anna
+-PowerPoint - Rudro
