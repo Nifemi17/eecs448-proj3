@@ -126,8 +126,10 @@ function setSpecialSpaces() {
 			console.log("endSpace + 1:", endSpace + 1);
 			console.log('\n');
 			
-			specArr[ctr] = new SpecSpace(originSpace, endSpace);
-			ctr++;
+			if (boardArr[originSpace] != 0) {
+				specArr[ctr] = new SpecSpace(originSpace, endSpace);
+				ctr++;
+			}
 			
 		}
 		}
@@ -141,7 +143,7 @@ function setSpecialSpaces() {
 *	@post special space graphics drawn on game board
 **/
 function drawSpecialSpaces() {
-	for (let i = 0; i < specArr.length - 1; i++) {
+	for (let i = 0; i < specArr.length; i++) {
 		let space = specArr[i].origin;
 		let endSpace = specArr[i].end;
 		
