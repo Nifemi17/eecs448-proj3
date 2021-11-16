@@ -1,7 +1,7 @@
 const WORMHOLE = 5; //Moves players forward by up to ten spaces
-const WORMHOLE_FILLSTYLE = 'purple';
+const WORMHOLE_FILLSTYLE = 'white';
 const BLACK_HOLE = 6; //Moves players back by up to ten spaces
-const BLACK_HOLE_FILLSTYLE = 'black';
+const BLACK_HOLE_FILLSTYLE = 'purple';
 const ROW_NUM = 10; //total number of rows
 const COL_NUM = 10; //total number of columns
 
@@ -32,6 +32,13 @@ function getOffset() {
 	return totalOffset;
 }
 
+function getXPos(row, col) {
+	if (row%2 == 0)
+		return (col*50)+12.5;
+	
+	else 
+		return 462.5-(col*50);
+}
 function setEnd(originSpace) {
 	let offset = getOffset();
 	
@@ -80,8 +87,9 @@ function getRandomInt(max, min) {
 function setSpecialSpaces() {
 	let ctr = 0; //tracks how many special spaces have been made
 	
-	for (let i = 0; i < ROW_NUM; i++) {
+	for (let i = 0; i < ROW_NUM - 1; i++) {
 		//j < 2 means 2 of each special space type per row
+		if (i % 2 == 1) {
 		for (let j = 0; j < 2; j++) {
 			var rowMin = i*COL_NUM;
 			var rowMax = rowMin + COL_NUM;
@@ -122,6 +130,7 @@ function setSpecialSpaces() {
 			ctr++;
 			
 		}
+		}
 	}
 	
 	drawSpecialSpaces();
@@ -132,32 +141,43 @@ function setSpecialSpaces() {
 *	@post special space graphics drawn on game board
 **/
 function drawSpecialSpaces() {
-	for (let i = 0; i < ROW_NUM; i++) {
-		for (let j = 0; j < COL_NUM; j++) {
-			let space = boardArr[(i*COL_NUM)+j];
-			
-			if (space > 4) {
-				context.beginPath();
-				if(space == WORMHOLE) 
-					context.fillStyle = WORMHOLE_FILLSTYLE;
+	for (let i = 0; i < specArr.length - 1; i++) {
+		let space = specArr[i].origin;
+		let endSpace = specArr[i].end;
 		
-				else if(space == BLACK_HOLE) 
-					context.fillStyle = BLACK_HOLE_FILLSTYLE;
-				
-				if(i%2 == 0) {
-					context.arc((j*50)+12.5, 387.5-(i*40), 7.5, 0, 2*Math.PI);
-				}
-				
-				else if(i%2 == 1) {
-					context.arc(462.5-(j*50), 387.5-(i*40), 7.5, 0, 2*Math.PI);
-				}
+		let originCol = space % COL_NUM;
+		let originRow = (space - originCol) / ROW_NUM;
+		console.log('\n');
+		console.log("space:", space);
+		console.log("originCol:", originCol);
+		console.log("originRow:", originRow);
+		
+		let endCol = endSpace % COL_NUM;
+		let endRow = (endSpace - endCol) / ROW_NUM; 
+			
+		context.beginPath();
+		if(boardArr[space] == WORMHOLE) 
+			context.fillStyle = WORMHOLE_FILLSTYLE;
+		
+		else if(boardArr[space] == BLACK_HOLE) 
+			context.fillStyle = BLACK_HOLE_FILLSTYLE;
 
-				context.closePath();
-				context.fill();
-			}
-		}
+		context.arc(getXPos(originRow, originCol), 387.5-(originRow*40), 7.5, 0, 2*Math.PI);
+		
+		context.closePath();
+		context.fill();
+		
+		context.beginPath();
+		context.moveTo(getXPos(originRow, originCol), 387.5-(originRow*40));
+		
+		context.lineTo(getXPos(endRow, endCol), 387.5-(endRow*40));
+		
+		context.stroke();
+		
 	}
 }
+
+
 
 
 /**
