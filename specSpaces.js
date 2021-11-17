@@ -1,13 +1,13 @@
-const WORMHOLE = 5; //Moves players forward by up to ten spaces
+const WORMHOLE = 5; //Moves players forward by a predetermined amount
 const WORMHOLE_FILLSTYLE = 'pink';
-const BLACK_HOLE = 6; //Moves players back by up to ten spaces
+const BLACK_HOLE = 6; //Moves players back by a predetermined amount
 const BLACK_HOLE_FILLSTYLE = 'purple';
 const ROW_NUM = 10; //total number of rows
 const COL_NUM = 10; //total number of columns
 
 var specArr = []; //SpecSpace object array
 
-
+//stores information for a special space
 class SpecSpace {
 	constructor (originSpace, endSpace, spaceType, c) {
 		this.origin = originSpace; //special space's number
@@ -25,83 +25,82 @@ class SpecSpace {
 	}
 }
 
-function getXPos(row, col) {
+/**
+* @return x value of top left corner of space (with offset)
+**/
+function getXPos(row, col, offset) {
 	if (row%2 == 0)
-		return (col*50)+12.5;
+		return (col*50) + offset;
 	
 	else 
-		return 462.5-(col*50);
-}
-
-
-/**
-*	returns a number between min (included) and max (excluded).
-**/
-function getRandomInt(max, min) {
-	return Math.floor(Math.random() * (max - min) + min);
+		return 450 + offset -(col*50);
 }
 
 /**
 *	@pre boardArr is defined
-*	@brief randomly generates special spaces on the board
+*	@brief sets special spaces at static locations on the board
+*	@post special spaces are created, types are assigned to corresponding boardArr elements
 **/
 function setSpecialSpaces() {
+	let elemNum = 0
 	//special spaces given constant values
-	specArr[0] = new SpecSpace(6, 25, WORMHOLE, WORMHOLE_FILLSTYLE);
-	specArr[1] = new SpecSpace(37, 57, WORMHOLE, WORMHOLE_FILLSTYLE);
-	specArr[2] = new SpecSpace(46, 77, WORMHOLE, WORMHOLE_FILLSTYLE);
-	specArr[3] = new SpecSpace(68, 92, WORMHOLE, WORMHOLE_FILLSTYLE);
-	specArr[4] = new SpecSpace(39, 3, BLACK_HOLE, BLACK_HOLE_FILLSTYLE);
-	specArr[5] = new SpecSpace(56, 16, BLACK_HOLE, BLACK_HOLE_FILLSTYLE);
-	specArr[6] = new SpecSpace(71, 19, BLACK_HOLE, BLACK_HOLE_FILLSTYLE);
-	specArr[7] = new SpecSpace(98, 64, BLACK_HOLE, BLACK_HOLE_FILLSTYLE);
+	specArr[elemNum++] = new SpecSpace(6, 25, WORMHOLE, WORMHOLE_FILLSTYLE);
+	specArr[elemNum++] = new SpecSpace(37, 57, WORMHOLE, WORMHOLE_FILLSTYLE);
+	specArr[elemNum++] = new SpecSpace(46, 77, WORMHOLE, WORMHOLE_FILLSTYLE);
+	specArr[elemNum++] = new SpecSpace(65, 87, WORMHOLE, WORMHOLE_FILLSTYLE);
+	specArr[elemNum++] = new SpecSpace(15, 34, WORMHOLE, WORMHOLE_FILLSTYLE);
+	specArr[elemNum++] = new SpecSpace(29, 51, WORMHOLE, WORMHOLE_FILLSTYLE);
+	
+	specArr[elemNum++] = new SpecSpace(39, 3, BLACK_HOLE, BLACK_HOLE_FILLSTYLE);
+	specArr[elemNum++] = new SpecSpace(56, 16, BLACK_HOLE, BLACK_HOLE_FILLSTYLE);
+	specArr[elemNum++] = new SpecSpace(71, 19, BLACK_HOLE, BLACK_HOLE_FILLSTYLE);
+	specArr[elemNum++] = new SpecSpace(98, 64, BLACK_HOLE, BLACK_HOLE_FILLSTYLE);
+	specArr[elemNum++] = new SpecSpace(32, 13, BLACK_HOLE, BLACK_HOLE_FILLSTYLE);
+	specArr[elemNum++] = new SpecSpace(84, 59, BLACK_HOLE, BLACK_HOLE_FILLSTYLE);
 	
 	for (let i = 0; i < specArr.length; i++) {
 		boardArr[specArr[i].origin] = specArr[i].type;
 	}
-	
-	drawSpecialSpaces();
 }
 
 /**
 *	@pre special spaces has been generated
-*	@post special space graphics drawn on game board
+*	@post special space origin graphics drawn on game board
 **/
-function drawSpecialSpaces() {
+function drawSpecialOrigins() {
 	for (let i = 0; i < specArr.length; i++) {
 		let originCol = specArr[i].origin % COL_NUM;
 		let originRow = (specArr[i].origin - originCol) / ROW_NUM;
 		let endCol = specArr[i].end % COL_NUM;
 		let endRow = (specArr[i].end - endCol) / ROW_NUM;
 		
-		console.log('\n');
-		console.log("origin:", specArr[i].origin);
-		console.log("end:", specArr[i].end);
-		console.log("originCol:", originCol);
-		console.log("originRow:", originRow);
-		console.log("endCol:", originCol);
-		console.log("endRow:", originRow);
-		
 		//Draw the special space origin
-		context.beginPath();
 		context.fillStyle = specArr[i].color;
-		context.arc(getXPos(originRow, originCol), 387.5-(originRow*40), 7.5, 0, 2*Math.PI);
-		context.closePath();
-		context.fill();
+		context.fillRect(getXPos(originRow, originCol, 0), 360-(originRow*40), 50, 40);
 		
-		//draw line to end space
-		context.beginPath();
-		context.strokeStyle = specArr[i].color;
-		context.moveTo(getXPos(originRow, originCol), 387.5-(originRow*40));
-		context.lineTo(getXPos(endRow, endCol), 387.5-(endRow*40));
-		context.stroke();
 		
-		//draw the arrow at end of line
 	}
 }
 
-
-
+/**
+*	@pre special spaces already set
+*	@post draws lines to the end space for each special space
+*/
+function drawSpecialLines() {
+	for (let i = 0; i < specArr.length; i++) {
+		let originCol = specArr[i].origin % COL_NUM;
+		let originRow = (specArr[i].origin - originCol) / ROW_NUM;
+		let endCol = specArr[i].end % COL_NUM;
+		let endRow = (specArr[i].end - endCol) / ROW_NUM;
+	
+		//draw line to end space
+		context.beginPath();
+		context.strokeStyle = specArr[i].color;
+		context.moveTo(getXPos(originRow, originCol, 25), 380-(originRow*40));
+		context.lineTo(getXPos(endRow, endCol, 25), 380-(endRow*40));
+		context.stroke();
+	}
+}
 
 /**
 *	@pre a special space has been landed on
@@ -109,12 +108,8 @@ function drawSpecialSpaces() {
 *	@param currentSpace the space number the player has landed on
 **/
 function getRepositionValue(currentSpace) {
-	console.log("currentSpace:", currentSpace);
 	for (let i = 0; i < specArr.length + 1; i++) {
-		console.log("specArr[i].origin:", specArr[i].origin)
-		console.log(specArr[i].origin == currentSpace);
 		if (specArr[i].origin == currentSpace) {
-			console.log("got here:", i);
 			return specArr[i].spaceDiff;
 		}
 	}
