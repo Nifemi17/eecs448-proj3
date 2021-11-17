@@ -11,10 +11,11 @@ function playGame(playerTurn)
 	if (boardArr[boardArr.length - 1] != 0) {
 		printWin();
 	}
+	
 	printBoard();
 	context.clearRect(5, 380, 15, 15)
 	printPlayers();
-	drawSpecialSpaces();
+	
 	userInput = '';
 	isTurn = false;
 	clearPic();

@@ -54,7 +54,6 @@ function movePlayer(wordLength, Pidentifier, Pcolor)
             }
         }
     }
-    
 }
 // Just prints the player's position during movement after screen is cleared. 
  function printPlayers() {
@@ -116,6 +115,8 @@ function printPos()
 
 function printBoard()
 {
+	drawSpecialOrigins();
+	
     context.beginPath();
     context.moveTo(0,0);
     context.lineTo(500,0);
@@ -136,5 +137,7 @@ function printBoard()
     context.lineWidth = 3;
     context.stroke();
     context.closePath();
-    printPos();
+	drawSpecialLines();
+	printPos();
+    
 }

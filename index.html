@@ -65,9 +65,10 @@
         //hands control to main.js after DOM content is loaded and parsed.
         document.addEventListener('DOMContentLoaded', () => {
             console.log('DOM finished loading/parsing');
-
+			
+			setSpecialSpaces();
             printBoard();
-            setSpecialSpaces();
+            
             wordPrep();
         });
     </script>
