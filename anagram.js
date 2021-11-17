@@ -1,10 +1,10 @@
-function clickToStart(){
-    if(isTurn == false) {
+function clickToStart() {
+    if (isTurn == false) {
         isTurn = true;
-		document.getElementById("longWord").innerHTML = "Longest word is: ";
-		longest = '';
-        letters(); 
-        startTimer() ; 
+        document.getElementById("longWord").innerHTML = "Longest word is: ";
+        longest = '';
+        letters();
+        startTimer();
     }
     else {
         console.log("Timer going now");
@@ -13,21 +13,21 @@ function clickToStart(){
 
 //Scrabble distribution
 //A-9, B-2, C-2, D-4, E-12, F-2, G-3, H-2, I-9, J-1, K-1, L-4, M-2, N-6, O-8, P-2, Q-1, R-6, S-4, T-6, U-4, V-2, W-2, X-1, Y-2, Z-1
-function letters(){
-    var result           = '';
-    var characters       = 'AAAAAAAAABBCCDDDDEEEEEEEEEEEEFFGGGHHIIIIIIIIIJKLLLLMMNNNNNNOOOOOOOOPPQRRRRRRSSSSTTTTTTUUUUVVWWXYYZ';
+function letters() {
+    var result = '';
+    var characters = 'AAAAAAAAABBCCDDDDEEEEEEEEEEEEFFGGGHHIIIIIIIIIJKLLLLMMNNNNNNOOOOOOOOPPQRRRRRRSSSSTTTTTTUUUUVVWWXYYZ';
     var charactersLength = characters.length;
-    var randomNum        = 0;
-    for ( var i = 0; i < 10; i++ ) {
+    var randomNum = 0;
+    for (var i = 0; i < 10; i++) {
         randomNum = Math.floor(Math.random() * charactersLength)
         result += characters.charAt(randomNum);
-        characters = characters.slice(0, randomNum) + characters.slice(randomNum+1, charactersLength);
+        characters = characters.slice(0, randomNum) + characters.slice(randomNum + 1, charactersLength);
         charactersLength = characters.length;
     }
     console.log(result);
 
     let container = document.getElementById("randoLetters");
-    container.textContent=result;
+    container.textContent = result;
 }
 
 
@@ -35,11 +35,11 @@ function letters(){
 var userInput = '';
 function validLetters() {
     var letters = '';
-    
+
     let container1 = document.getElementById("randoLetters");
     let container2 = document.getElementById("inputWord");
     userInput = container2.value.toUpperCase();
-	console.log("userInput:", userInput);
+    console.log("userInput:", userInput);
     letters = container1.textContent;
 
     var match;
@@ -48,7 +48,7 @@ function validLetters() {
         for (var j = 0; j < letters.length; j++) {
             if (userInput.charAt(i) == letters.charAt(j)) {
                 //remove jth letter from list
-                letters = letters.slice(0, j) + letters.slice(j+1, letters.length);
+                letters = letters.slice(0, j) + letters.slice(j + 1, letters.length);
                 match = true;
                 break;
             }
@@ -56,105 +56,101 @@ function validLetters() {
                 match = false;
             }
         }
-        if(!match){
+        if (!match) {
             break;
         }
     }
     if (isWord(userInput.toLowerCase()) && match && (userInput.length >= 3)) {
-		longest = lengthChecker();
-		greenCheck();
+        longest = lengthChecker();
+        greenCheck();
     }
     else {
-		userInput = '';
+        userInput = '';
         redX();
     }
     console.log("user input has valid letters:", match);
     console.log("user input is an english word and >= 3 letters: ", isWord(userInput.toLowerCase()));
-	console.log('\n');
+    console.log('\n');
     document.getElementById("longWord").innerHTML = "Longest word is: " + longest;
 }
 
-
-function pressEnter(e){
+function pressEnter(e) {
     if (!e) e = window.event;
     var keyCode = e.code || e.key;
-    if (keyCode == 'Enter'){
-      // Enter pressed
-	  if (isTurn == true) {
-		validLetters();
-	  }
-	  
-	  else {
-		  console.log("Word input error: isTurn == false");
-	  }
-	  clearUserInput();
+    if (keyCode == 'Enter') {
+        // Enter pressed
+        if (isTurn == true) {
+            validLetters();
+        }
+
+        else {
+            console.log("Word input error: isTurn == false");
+        }
+        clearUserInput();
     }
-  }
+}
 
 function clearUserInput() {
     document.getElementById("inputWord").value = "";
 }
 
-function lengthChecker()
-{
-	console.log("user input is longer than longest word:", (userInput.length > longest.length));
-	if (userInput.length > longest.length)
-	{
-		
-		return userInput;
-	}
-	
-	return longest;
+function lengthChecker() {
+    console.log("user input is longer than longest word:", (userInput.length > longest.length));
+    if (userInput.length > longest.length) {
+
+        return userInput;
+    }
+
+    return longest;
 }
 
 let playerSwitch = 0;
-function startTimer()
-{
+function startTimer() {
     console.log(numPlayers)
     let playerTurn = 0;
-        if (playerSwitch % numPlayers == 0) {
-            playerTurn = 0
-            playerSwitch = playerSwitch + 1
-            //console.log(numPlayers)
-        }
-        else if (playerSwitch % numPlayers == 1) {
-            playerTurn = 1
-            playerSwitch++
-        }
-        else if(playerSwitch % numPlayers == 2){
-            playerTurn = 2
-            playerSwitch++
-        }
-        else if(playerSwitch % numPlayers == 3){
-            playerTurn = 3;
-            playerSwitch++
-        }
-
-	//1 1-sec interval + 14 1-sec intervals = 15-sec timer
-    var timeleft = 14;
-	document.getElementById("countdown").innerHTML = (timeleft + 1) + " seconds remaining";
-	
-    var downloadTimer = setInterval(function(){
-    if(timeleft <= 0){
-      clearInterval(downloadTimer);
-      document.getElementById("countdown").innerHTML = "Finished";
-	  playGame(playerTurn);
-    } else {
-      document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+    if (playerSwitch % numPlayers == 0) {
+        playerTurn = 0
+        playerSwitch = playerSwitch + 1
+        //console.log(numPlayers)
     }
-    timeleft -= 1;
-    }, 1000);
- }
+    else if (playerSwitch % numPlayers == 1) {
+        playerTurn = 1
+        playerSwitch++
+    }
+    else if (playerSwitch % numPlayers == 2) {
+        playerTurn = 2
+        playerSwitch++
+    }
+    else if (playerSwitch % numPlayers == 3) {
+        playerTurn = 3;
+        playerSwitch++
+    }
 
- function greenCheck() {
+    //1 1-sec interval + 14 1-sec intervals = 15-sec timer
+    var timeleft = 14;
+    document.getElementById("countdown").innerHTML = (timeleft + 1) + " seconds remaining";
+
+    var downloadTimer = setInterval(function () {
+        if (timeleft <= 0) {
+            clearInterval(downloadTimer);
+            document.getElementById("countdown").innerHTML = "Finished";
+            playGame(playerTurn);
+        } else {
+            document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+        }
+        timeleft -= 1;
+    }, 1000);
+}
+
+function greenCheck() {
     var div = document.getElementById('resultPic');
     div.innerHTML = '<img src="images/greenCheck.png" style="width:80px; height:auto; margin-top: -80px; margin-left: 85%;" />';
- }
+}
 
- function redX() {
+function redX() {
     var div = document.getElementById('resultPic');
     div.innerHTML = '<img src="images/redX.png" style="width:80px; height:auto; margin-top: -80px; margin-left: 85%;" />';
- }
+}
 
 function clearPic() {
     var div = document.getElementById('resultPic');
@@ -162,15 +158,13 @@ function clearPic() {
 }
 
 
-function shuffleLetters()
-{
+function shuffleLetters() {
     let container = document.getElementById("randoLetters");
     let word = '';
     word = container.textContent;
     var arr = word.split('');
     var n = arr.length;
-    for (var i = 0; i < n-1; ++i)
-    {
+    for (var i = 0; i < n - 1; ++i) {
         var j = Math.floor(Math.random() * n);
         var temp = arr[i];
         arr[i] = arr[j];

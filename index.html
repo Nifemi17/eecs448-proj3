@@ -62,13 +62,12 @@
 
         let canvas = document.getElementById('gameCanvas');
         let context = canvas.getContext('2d');
-        //hands control to main.js after DOM content is loaded and parsed.
+        // hands control to main.js after DOM content is loaded and parsed.
         document.addEventListener('DOMContentLoaded', () => {
             console.log('DOM finished loading/parsing');
-			
-			setSpecialSpaces();
+
             printBoard();
-            
+            setSpecialSpaces();
             wordPrep();
         });
     </script>
@@ -88,7 +87,7 @@
                     <div>
                     </div>
                     <div id="resultPic"> <img src=""></div>
-
+                    <!-- THis is the header tag for the title we have for our game -->
                     <h1><a href="#0">Telloble Game by Nifemi, Anna, Yuri, Michael and Rudro!</a></h1>
 
 </html>
