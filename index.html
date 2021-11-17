@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <title>Anagram Board Game</title>
     <meta name="description" content="A game that mixes Chutes and Ladders with Anagrams">
     <meta name="author" content="EECS 448 Team 18">
@@ -25,7 +25,8 @@
     <script src="game.js"></script>
     <script src="player.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
+    
+    <!--div for intro box which contains instructions for the players-->
     <div id="introBox" style="margin-top: 200px;">
         <div id="settingsModal">
             <h1 align="center" style="font-size: 30px;">Welcome to the new and improved snakes and ladders!</h1>
@@ -46,7 +47,6 @@
             </div>
         </div>
     </div>
-
     <div id="mainCan" style="display: none;">
         <canvas id="gameCanvas" width="500" height="400"
             style="position: absolute; left: 20%; margin-left:-220px; top: 30%; margin-top:-100px; border: 1px solid rgb(247, 214, 214);">
