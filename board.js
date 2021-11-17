@@ -3,7 +3,13 @@ for(let i = 99; i >= 0; i--)
     {
         boardArr[i] = 0;
     }
-// Sets player's position on the board
+
+/**
+ * 
+ * @param {number} wordLength - amount of spaces to move the player
+ * @param {player} Pidentifier - the plaer ID that is placed at the postion that the player exists.
+ * @brief the function sets the position of the playe on the board array.
+ */
 function setPos(wordLength, Pidentifier)
 {
     let oldPos = getPos(Pidentifier);
@@ -24,7 +30,14 @@ function setPos(wordLength, Pidentifier)
 	}
     boardArr[oldPos + wordLength ] = Pidentifier;
 }
-// Handles the player's movement on the board
+
+/**
+ * 
+ * @param {number} wordLength - the amount of space to move the player
+ * @param {player object} Pidentifier - the player ID that is passed to the function to know which player is moving
+ * @param {*} Pcolor - the color of the player that is being moved
+ * @brief handles the player's movement on the board durin game play
+ */
 function movePlayer(wordLength, Pidentifier, Pcolor)
 {
     let oldPos = getPos(Pidentifier);
@@ -55,6 +68,13 @@ function movePlayer(wordLength, Pidentifier, Pcolor)
         }
     }
 }
+
+/**
+ * @pre the player has moved from the initial postion
+ * @post to print the player, calls drawpiece and passes it the color, the row and column
+ * at which the player is located.
+ * @brief called when the canvas is cleared to re-draw ther player's postion
+ */
 // Just prints the player's position during movement after screen is cleared. 
  function printPlayers() {
     for (let row = 0; row < 10; row++) {
@@ -67,6 +87,15 @@ function movePlayer(wordLength, Pidentifier, Pcolor)
         }
     }
 }
+
+/**
+ * 
+ * @param {number} Cols - the color the player piece should be
+ * @param {number} row - the column that the player piece should be drawn at
+ * @param {number} col - the column gthat the player piece shod be drawn at
+ * @post a rectangle is drawn at the postion the player is located
+ */
+
 function drawpiece(Cols, row, col) {
     context.fillStyle = Cols
     if (row % 2 == 0) {
@@ -77,6 +106,11 @@ function drawpiece(Cols, row, col) {
     }
 }
 
+/**
+ * 
+ * @param {player object} Pidentifier - is used to locate the player on the board
+ * @returns {number} - the position of the player on the board
+ */
 function getPos(Pidentifier)
 {
     let PlayerPos = 0;
@@ -90,6 +124,9 @@ function getPos(Pidentifier)
     return PlayerPos;
 }
 
+/**
+ * @post prints the board postion numbers on the board grid
+ */
 function printPos()
 {
     context.fillStyle = "red"
@@ -113,6 +150,9 @@ function printPos()
     }
 }
 
+/**
+ * @post prints the board grid on the page
+ */
 function printBoard()
 {
 	drawSpecialOrigins();
