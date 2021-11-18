@@ -24,11 +24,11 @@
 
 -print who's turn it is - (complete)
 
--special space legend - Yuri
+-special space legend - (complete)
 
 -Player legend - (complete)
 
--decreased title banner - Rudro
+-decreased title banner - (Complete)
 
 --video--
 -Script - Anna
