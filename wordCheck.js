@@ -5,8 +5,9 @@
 //variable context = gameCanvas's context
 
 /**
-* returns true if the passed string str is a word on the word list (wordArr).
-* @param str the word string to be chekced
+*	@pre wordArray populated with word list from database
+* 	@return true if the passed string str is a word on the word list (wordArr).
+* 	@param str the word string to be chekced
 */
 function isWord(str) {
 	return wordArray.includes('\n' + str + '\r');
