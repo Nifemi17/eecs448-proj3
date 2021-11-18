@@ -1,37 +1,42 @@
 //Object that holds all test functions
 let tests = {
 	/*
-	* tests related to word check
+	* tests related to word database preparation
 	*/
-	
 	validWord: function () {
 		let testMessage = "(word check)\ninput strings matching valid english words are accepted: ";	
 		var str = 'zwitterion';
-		let result = isWord(str);
-		
-		return testMessage + passOrFail(result);
+		return testMessage + passOrFail(isWord(str));
 	},
 	
-	inValidWord: function () {
+	invalidWord: function () {
 		let testMessage = "(word check)\ninput strings not matching valid english words are rejected: ";	
 		var str = 'affluentic';
-		let result = !isWord(str);
-		
-		return testMessage + passOrFail(result);
+		return testMessage + passOrFail(!isWord(str));
 	},
 	
-	SpecSpacesAssigned: function () {
-		let testMessage = "(Special Spaces)\nSpecial spaces are assigned to boardArr: ";
+	specialSpaceMovesPlayer: function () {
+		let testMessage = "(special spaces)\nwhen player lands on specArr[3]'s origin space, they are moved to its end space: ";
+		let testSpecial = specArr[3];
+		let testPlayer = 1;
+		let testMoveValue = 1;
 		
-		for (let i = 0; i < specArr.length; i++) {
-			if (boardArr[specArr.origin] != specArr.type)
-				return testMessage + passOrFail(false);
-		}
+		boardArr[testSpecial.origin - 1] = testPlayer;
+		setPos(testMoveValue, testPlayer);
 		
-		return testMessage + passOrFail(true);
+		let result = passOrFail(boardArr[testSpecial.end] == testPlayer);
+		
+		return testMessage + result;
 	},
 }
 
+function resetValues() {
+	for (let i = 0; i < boardArr.length; i++) {
+		let space = boardArr[i];
+		if (space != 0 || space != WORMHOLE || space != BLACK_HOLE)
+			boardArr[i] = 0;
+	}
+}
 /**
 *	@return 'PASS' or 'FAIL' based on testPassed's value
 *	@param testPassed boolean value that represents the test result.
