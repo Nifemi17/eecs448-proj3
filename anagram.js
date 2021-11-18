@@ -104,28 +104,7 @@ function lengthChecker() {
     return longest;
 }
 
-let playerSwitch = 0;
 function startTimer() {
-    console.log(numPlayers)
-    let playerTurn = 0;
-    if (playerSwitch % numPlayers == 0) {
-        playerTurn = 0
-        playerSwitch = playerSwitch + 1
-        //console.log(numPlayers)
-    }
-    else if (playerSwitch % numPlayers == 1) {
-        playerTurn = 1
-        playerSwitch++
-    }
-    else if (playerSwitch % numPlayers == 2) {
-        playerTurn = 2
-        playerSwitch++
-    }
-    else if (playerSwitch % numPlayers == 3) {
-        playerTurn = 3;
-        playerSwitch++
-    }
-
     //1 1-sec interval + 14 1-sec intervals = 15-sec timer
     var timeleft = 14;
     document.getElementById("countdown").innerHTML = (timeleft + 1) + " seconds remaining";
@@ -134,7 +113,7 @@ function startTimer() {
         if (timeleft <= 0) {
             clearInterval(downloadTimer);
             document.getElementById("countdown").innerHTML = "Finished";
-            playGame(playerTurn);
+            playGame();
         } else {
             document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
         }

@@ -14,8 +14,12 @@
 <div id="randoLetters" align="center"
     style="margin-top:10%; margin-left: 45%; margin-bottom: 18px; padding: 10px; font-size: 25px; display: none;">RANDOM
     LETTERS HERE</div>
-<div id="countdown" align="center" style="margin-bottom: 10px;"> </div>
-<div id="longWord" align="center"> </div>
+	
+<div id="turnInfo" style="display: none;">
+	<div id="currentTurn" align="center" style="margin-bottom: 10px">Player 1's Turn</div>
+	<div id="countdown" align="center" style="margin-bottom: 10px;"> </div>
+	<div id="longWord" align="center"> </div>
+</div>
 
 <body>
     <script src="board.js"></script>
@@ -59,6 +63,7 @@
         let longest = '';
         let isTurn = false;
         let numPlayers = 0;
+		let playerTurn = 0;
 
         let canvas = document.getElementById('gameCanvas');
         let context = canvas.getContext('2d');

@@ -2,10 +2,10 @@ function printWin() {
 	document.getElementById("winMessage").innerHTML = "Player " + boardArr[boardArr.length - 1] + " wins!!";
 }
 
-function playGame(playerTurn)
+function playGame()
 {
 	console.log("ewe")
-	console.log(playerTurn)
+	console.log("playerTurn:", playerTurn)
 	context.clearRect(0, 0, canvas.width, canvas.height);
 	movePlayer(longest.length, playerArr[playerTurn+1].ID, playerArr[playerTurn+1].PC);
 	if (boardArr[boardArr.length - 1] != 0) {
@@ -19,6 +19,10 @@ function playGame(playerTurn)
 	userInput = '';
 	isTurn = false;
 	clearPic();
+	playerTurn++;
+	if (playerTurn >= numPlayers)
+		playerTurn = 0;
+	document.getElementById("currentTurn").innerHTML = "Player " + (playerTurn+1) + "'s Turn";
 }
 
 function setPlayers(num) {
@@ -29,4 +33,5 @@ function setPlayers(num) {
 	document.getElementById("mainCan").style.display = '';
 	document.getElementById("mainGame").style.display = '';
 	document.getElementById("randoLetters").style.display = '';
+	document.getElementById("turnInfo").style.display = '';
 }
