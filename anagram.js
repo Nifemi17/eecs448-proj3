@@ -134,7 +134,7 @@ function lengthChecker() {
 
 /**
  * @pre called when the user presses the click to start button
- * @post switches the player turn and counts down the timer
+ * @post turn ends, playGame function is called
  * @brief runs the timer and game
  */
 function startTimer() {
