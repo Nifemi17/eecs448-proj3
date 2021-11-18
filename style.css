@@ -10,7 +10,7 @@ body {background-color: whitesmoke}
 */
 #settingsModal{
     width: 500px;
-    height: 400px;
+    height: 420px;
     z-index: 100;
     display: block;
     position: fixed;
