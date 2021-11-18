@@ -23,6 +23,7 @@ function playGame(playerTurn)
 
 function setPlayers(num) {
 	numPlayers = num;
+	playerPieces(numPlayers);
 	startPlay(numPlayers);
 	console.log(numPlayers);
 	document.getElementById("introBox").innerHTML = '<style= "display: hidden;/>';

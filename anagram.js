@@ -1,3 +1,9 @@
+
+/**
+ * @pre the player has clicked the start button
+ * @post begins timer and calls random letters to be decided
+ * @brief called when player starts came
+ */
 function clickToStart() {
     if (isTurn == false) {
         isTurn = true;
@@ -6,11 +12,14 @@ function clickToStart() {
         letters();
         startTimer();
     }
-    else {
-        console.log("Timer going now");
-    }
 }
 
+
+/**
+ * @pre called by the start game button
+ * @post outputs random letters according to certain scrabble parameters
+ * @brief letters used for anagram game
+ */
 //Scrabble distribution
 //A-9, B-2, C-2, D-4, E-12, F-2, G-3, H-2, I-9, J-1, K-1, L-4, M-2, N-6, O-8, P-2, Q-1, R-6, S-4, T-6, U-4, V-2, W-2, X-1, Y-2, Z-1
 function letters() {
@@ -31,7 +40,11 @@ function letters() {
 }
 
 
-
+/**
+ * @pre called when the user presses "enter" when entering letters
+ * @post outputs the longest word that the user inputs
+ * @brief ensures letters are used correctly
+ */
 var userInput = '';
 function validLetters() {
     var letters = '';
@@ -74,6 +87,12 @@ function validLetters() {
     document.getElementById("longWord").innerHTML = "Longest word is: " + longest;
 }
 
+
+/**
+ * @pre called every time the user presses a key in the box
+ * @post clears user input and calls valid letters
+ * @brief enters the words into the system
+ */
 function pressEnter(e) {
     if (!e) e = window.event;
     var keyCode = e.code || e.key;
@@ -90,10 +109,19 @@ function pressEnter(e) {
     }
 }
 
+/**
+ * @pre called when the user presses "enter" when entering letters
+ * @post clears out the box where users input
+ */
 function clearUserInput() {
     document.getElementById("inputWord").value = "";
 }
 
+
+/**
+ * @pre called when the user presses "enter" when entering letters
+ * @post returns the longest word that the user inputs
+ */
 function lengthChecker() {
     console.log("user input is longer than longest word:", (userInput.length > longest.length));
     if (userInput.length > longest.length) {
@@ -104,6 +132,12 @@ function lengthChecker() {
     return longest;
 }
 
+
+/**
+ * @pre called when the user presses the click to start button
+ * @post switches the player turn and counts down the timer
+ * @brief runs the timer and game
+ */
 let playerSwitch = 0;
 function startTimer() {
     console.log(numPlayers)
@@ -142,22 +176,41 @@ function startTimer() {
     }, 1000);
 }
 
+/**
+ * @pre called when user inputs a valid word
+ * @post green check is displayed on screen
+ * @brief outputs a green check when called
+ */
 function greenCheck() {
     var div = document.getElementById('resultPic');
     div.innerHTML = '<img src="images/greenCheck.png" style="width:80px; height:auto; margin-top: -80px; margin-left: 85%;" />';
 }
 
+/**
+ * @pre called when user inputs an invalid word
+ * @post red X is displayed on screen
+ * @brief outputs a red X when called
+ */
 function redX() {
     var div = document.getElementById('resultPic');
     div.innerHTML = '<img src="images/redX.png" style="width:80px; height:auto; margin-top: -80px; margin-left: 85%;" />';
 }
 
+/**
+ * @pre called when user turn is over
+ * @post nothing is displayed on screen
+ * @brief outputs nothing
+ */
 function clearPic() {
     var div = document.getElementById('resultPic');
     div.innerHTML = '<img src="" />';
 }
 
-
+/**
+ * @pre called when user presses the shuffle button
+ * @post letters are randomized on the screen
+ * @brief shuffles the random letters when the user needs them shuffled
+ */
 function shuffleLetters() {
     let container = document.getElementById("randoLetters");
     let word = '';
