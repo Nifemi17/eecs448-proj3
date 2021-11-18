@@ -1,10 +1,10 @@
--Finish special spaces - Yuri
+-Finish special spaces - (complete)
 
 -maintenance plan - Michael
 
--defect tool - Rudro
+-defect tool - (complete)
 
--swap players - Anna
+-swap players - (complete)
 
 -test suite - Yuri
 
@@ -22,7 +22,7 @@
 
 -starting position - Anna
 
--print who's turn it is - Michael
+-print who's turn it is - (complete)
 
 -special space legend - Yuri
 
