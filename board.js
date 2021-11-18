@@ -194,32 +194,28 @@ function printBoard()
 /**
  * 
  * @param {number} numPlayers - number of players in the game
- * @brief this function prints the legend of which player is what color
+ * @brief this function prints the legend labeling player pieces and special spaces
  */
 function playerPieces(numPlayers) {
-    ctx.fillStyle = 'red';
-    ctx.fillRect(45, 30, 20, 20);
-    ctx.font = '15px serif';
-    ctx.fillStyle = 'black';
-    ctx.fillText("Player 1", 25, 70);
-    ctx.fillStyle = 'blue';
-    ctx.fillRect(160, 30, 20, 20);
-    ctx.font = '15px serif';
-    ctx.fillStyle = 'black';
-    ctx.fillText("Player 2", 145, 70);
-    if(numPlayers >= 3) {
-        ctx.fillStyle = 'green';
-        ctx.fillRect(275, 30, 20, 20);
-        ctx.font = '15px serif';
-        ctx.fillStyle = 'black';
-        ctx.fillText("Player 3", 260, 70);
-        if(numPlayers == 4) {
-            ctx.fillStyle = 'orange';
-            ctx.fillRect(390, 30, 20, 20);
-            ctx.font = '15px serif';
-            ctx.fillStyle = 'black';
-            ctx.fillText("Player 4", 380, 70);
-        }
-    }
-
+	ctx.font = "15px serif";
+	
+	//Adds the player pieces to the legend
+	for (let i = 1; i < playerArr.length; i++) {
+		ctx.fillStyle = playerArr[i].PC;
+		ctx.fillRect(45 + ((i-1)*115), 30, 20, 20);
+		ctx.fillStyle = "black";
+		ctx.fillText("Player " + i, 30+((i-1)*115), 70);
+	}
+	
+	//the following code adds the special spaces to the legend
+	ctx.fillStyle = WORMHOLE_FILLSTYLE;
+	ctx.fillRect(110, 85, 30, 30);
+	
+	ctx.fillStyle = BLACK_HOLE_FILLSTYLE;
+	ctx.fillRect(110, 135, 30, 30);
+	
+	ctx.fillStyle = "black";
+	ctx.fillText("spaces move you forward", 150, 102);
+	ctx.fillText("spaces move you backward", 150, 152);
+	
 }

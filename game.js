@@ -36,8 +36,8 @@ function playGame()
 
 function setPlayers(num) {
 	numPlayers = num;
-	playerPieces(numPlayers);
 	startPlay(numPlayers);
+	playerPieces(numPlayers);
 	console.log(numPlayers);
 	document.getElementById("introBox").innerHTML = '<style= "display: hidden;/>';
 	document.getElementById("mainCan").style.display = '';
