@@ -10,9 +10,9 @@
 
 -comments:
 	-specSpaces.js / wordCheck.js / game.js- Yuri
-	-Board.js/Player.js - Nifemi
-	-Anagrams.js - Anna
-	-index.html / css file - Rudro
+	-Board.js/Player.js - (complete)
+	-Anagrams.js - (complete)
+	-index.html / css file - (complete)
 
 -integration strategy - Michael
 
@@ -26,6 +26,11 @@
 
 -special space legend - Yuri
 
+-Player legend - (complete)
+
+-decreased title banner - Rudro
+
 --video--
+-Script - Anna
 -Editing - Anna
 -PowerPoint - Rudro
