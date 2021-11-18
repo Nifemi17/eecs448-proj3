@@ -5,7 +5,11 @@
  * @brief called when player starts came
  */
 function clickToStart() {
-    if (isTurn == false) {
+	if (gameFinished) {
+		location.reload();
+	}
+	
+    else if (isTurn == false) {
         isTurn = true;
         document.getElementById("longWord").innerHTML = "Longest word is: ";
         longest = '';

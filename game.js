@@ -1,5 +1,7 @@
 function printWin() {
+	gameFinished = true;
 	document.getElementById("currentTurn").innerHTML = "Player " + boardArr[boardArr.length - 1] + " wins!!";
+	document.getElementById("turnStartButton").value = "Click to restart game";
 }
 
 function playGame()
@@ -21,6 +23,7 @@ function playGame()
 	if (boardArr[boardArr.length - 1] != 0) {
 		printWin();
 	}
+	
 	else {
 		playerTurn++;
 		
