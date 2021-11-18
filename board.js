@@ -8,7 +8,7 @@ for(let i = 99; i >= 0; i--)
  * 
  * @param {number} wordLength - amount of spaces to move the player
  * @param {player} Pidentifier - the plaer ID that is placed at the postion that the player exists.
- * @brief the function sets the position of the playe on the board array.
+ * @brief the function sets the position of the playe on the board array and switches player positions if one lands on another player
  */
 function setPos(wordLength, Pidentifier)
 {
@@ -25,9 +25,18 @@ function setPos(wordLength, Pidentifier)
         boardArr[99] = Pidentifier;
     }
     else if (boardArr[oldPos + wordLength] > 4) { 
+        oldoldPos = oldPos;
 		oldPos += wordLength;
 		wordLength = getRepositionValue(oldPos);
+        if (boardArr[oldPos + wordLength] <= 4 && boardArr[oldPos + wordLength] > 0) {
+            let otherPlayer = boardArr[oldPos + wordLength];
+            boardArr[oldoldPos] = otherPlayer;
+        }
 	}
+    else if (boardArr[oldPos + wordLength] <= 4 && boardArr[oldPos + wordLength] > 0) {
+        let otherPlayer = boardArr[oldPos + wordLength];
+        boardArr[oldPos] = otherPlayer;
+    }
     boardArr[oldPos + wordLength ] = Pidentifier;
 }
 
@@ -180,4 +189,37 @@ function printBoard()
 	drawSpecialLines();
 	printPos();
     
+}
+
+/**
+ * 
+ * @param {number} numPlayers - number of players in the game
+ * @brief this function prints the legend of which player is what color
+ */
+function playerPieces(numPlayers) {
+    ctx.fillStyle = 'red';
+    ctx.fillRect(45, 30, 20, 20);
+    ctx.font = '15px serif';
+    ctx.fillStyle = 'black';
+    ctx.fillText("Player 1", 25, 70);
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(160, 30, 20, 20);
+    ctx.font = '15px serif';
+    ctx.fillStyle = 'black';
+    ctx.fillText("Player 2", 145, 70);
+    if(numPlayers >= 3) {
+        ctx.fillStyle = 'green';
+        ctx.fillRect(275, 30, 20, 20);
+        ctx.font = '15px serif';
+        ctx.fillStyle = 'black';
+        ctx.fillText("Player 3", 260, 70);
+        if(numPlayers == 4) {
+            ctx.fillStyle = 'orange';
+            ctx.fillRect(390, 30, 20, 20);
+            ctx.font = '15px serif';
+            ctx.fillStyle = 'black';
+            ctx.fillText("Player 4", 380, 70);
+        }
+    }
+
 }

@@ -5,7 +5,7 @@ class Players {
     }
 }
 
-let pColor = [0,"red", "blue", "green", "purple"]
+let pColor = [0,"red", "blue", "green", "orange"]
 let playerArr = [];
 /**
  * 
