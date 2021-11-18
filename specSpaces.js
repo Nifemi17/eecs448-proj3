@@ -18,9 +18,6 @@ class SpecSpace {
 	
 	//returns difference between the origin and end spaces
 	get spaceDiff () {
-		console.log("origin:", this.origin);
-		console.log("end:", this.end);
-		console.log ("diff val:", this.end - this.origin);
 		return this.end - this.origin;
 	}
 }
