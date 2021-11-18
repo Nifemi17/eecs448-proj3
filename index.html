@@ -31,8 +31,11 @@
     <script src="anagram.js"></script>
     <script src="game.js"></script>
     <script src="player.js"></script>
+	<script src="testSuite.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    
+	
+	
+	
     <!--div for intro box which contains instructions for the players-->
     <div id="introBox" style="margin-top: 200px;">
         <div id="settingsModal">
@@ -51,9 +54,12 @@
                     style="background-color: pink; display: inline;">
                 <input type="button" id="fourP" value="4 Players" onclick="setPlayers(4);"
                     style="background-color: pink; display: inline;">
+				<input type="button" id="testButton" value="Run Tests" onclick="runTests();" 
+					style="background-color: pink; display: block; margin-left: auto; margin-right: auto;"></input>	
             </div>
         </div>
     </div>
+	
     <div id="mainCan" style="display: none;">
         <canvas id="gameCanvas" width="500" height="400"
             style="position: absolute; left: 20%; margin-left:-220px; top: 30%; margin-top:-100px; border: 1px solid rgb(247, 214, 214);">
@@ -78,8 +84,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             console.log('DOM finished loading/parsing');
 
+			setSpecialSpaces();
             printBoard();
-            setSpecialSpaces();
+			
             wordPrep();
         });
     </script>
