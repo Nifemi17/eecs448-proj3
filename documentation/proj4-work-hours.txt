@@ -20,9 +20,11 @@ Nov-10
   --Yuri:         1:06
   --Anna:         2:00
   --Nifemi:       3:00
+  --Michael:      2:00
 
 Nov-11
   --Nifemi:       3:00
+  --Anna:         1:00
 
 Nov-12
   --Nifemi:       2:00
@@ -34,11 +36,21 @@ Nov-15
   --Nifemi:       1:00
   --Yuri:         6:16
   --Team Meeting: 0:57
+  --Michael:      1:00
   
 Nov-16
   --Yuri:         2:36
   --Rudro:        2:30
+  --Anna:         3:30
   
 Nov-17
   --Team Meeting: 0:52
   --Yuri:         4:06
+  --Anna:         2:00
+  --Rudro:        0:30
+  --Michael:      1:00
+
+Nov-18
+  --Nifemi:       1:30
+  --Rudro:        1:30
+  --Michael:      3:00
