@@ -65,6 +65,19 @@ let tests = {
 		return testMessage + result;
 	},
 	
+	preventTurn: function () {
+		let testMessage = "(anagrams minigame) Player cannot restart minigame while current minigame instance is playing: ";
+		
+		longest = "aaaaa";
+		isTurn = true;
+		
+		clickToStart();
+		
+		let result = passOrFail(longest != "");
+		
+		return testMessage + result;
+	},
+	
 	specialSpaceMovesPlayer: function () {
 		let testMessage = "(special spaces)\nwhen player lands on specArr[3]'s origin space, they are moved to its end space: ";
 		let testSpecial = specArr[3];
@@ -134,6 +147,7 @@ function resetValues() {
 	longest = '';
 	playerTurn = 0;
 	playerArr = [];
+	
 	for (let i = 0; i < boardArr.length; i++) {
 		let space = boardArr[i];
 		if (space != 0 && space != WORMHOLE && space != BLACK_HOLE)
