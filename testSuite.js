@@ -4,15 +4,39 @@ let tests = {
 	* tests related to word database preparation
 	*/
 	validWord: function () {
-		let testMessage = "(word check)\nInput strings matching valid english words are accepted: ";	
+		let testMessage = "(word check)\nEnglish words are accepted by word database: ";	
 		var str = 'zwitterion';
 		return testMessage + passOrFail(isWord(str));
 	},
 	
 	invalidWord: function () {
-		let testMessage = "(word check)\nInput strings not matching valid english words are rejected: ";	
+		let testMessage = "(word check)\nNon-english words are rejected by word database: ";	
 		var str = 'affluentic';
 		return testMessage + passOrFail(!isWord(str));
+	},
+	
+	smallWords: function () {
+		let testMessage = "(anagrams minigame)\nUser string inputs less than 3 are rejected: ";
+		document.getElementById("randoLetters").textContent = testLetters();
+		document.getElementById("inputWord").textContent = "is"//word is english and in testLetters bank, but only 2 letters long
+		
+		validLetters();
+		
+		let result = passOrFail(longest != "is");
+		
+		return testMessage + result;
+	},
+	
+	notInWordBank: function () {
+		let testMessage = "(anagrams minigame)\nUser string inputs made of letters not in letter bank are rejected: ";
+		document.getElementById("randoLetters").textContent = testLetters();
+		document.getElementById("inputWord").textContent = "apple"//word is english and >= 3 letters, but only one p is in the letter bank
+		
+		validLetters();
+		
+		let result = passOrFail(longest != "apple");
+		
+		return testMessage + result;
 	},
 	
 	specialSpaceMovesPlayer: function () {
@@ -44,12 +68,44 @@ let tests = {
 		let result = passOrFail(boardArr[testPlayerPos] == testOpp && boardArr[testOppPos] == testPlayer);
 		return testMessage + result;
 	},
+	
+	PlayerMovePastEnd: function () {
+		let testMessage = "(player movement)\nPlayer moves to last space if they would normally move past: "
+		let testPlayer = 1;
+		let endSpace = boardArr.length - 1;
+		
+		boardArr[endSpace-1] = testPlayer;
+		let testMoveValue = 5;
+		
+		setPos(testMoveValue, testPlayer);
+		let result = passOrFail(boardArr[endSpace] == testPlayer);
+		
+		return testMessage + result;
+	},
+	
+	moveBasedOnStringLength: function () {
+		let testMessage = "(player movement)\nPlayer moves a number of spaces equal to length of longest word found: ";
+		longest = "aaa"; //three spaces
+		let testPlayer = 1;
+		
+		startPlay(2);
+		playGame();
+		let result = passOrFail(boardArr[3] == testPlayer);
+		
+		return testMessage + result;
+	}
 }
 
+function testLetters() {
+	return "SIAPLEBYTB";
+}
 /**
 *	@post global variables used in testing are reset to initial values
 */
 function resetValues() {
+	longest = '';
+	playerTurn = 0;
+	playerArr = [];
 	for (let i = 0; i < boardArr.length; i++) {
 		let space = boardArr[i];
 		if (space != 0 && space != WORMHOLE && space != BLACK_HOLE)
