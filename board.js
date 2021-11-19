@@ -23,6 +23,7 @@ function setPos(wordLength, Pidentifier)
     if((oldPos + wordLength) > 99)
     {
         boardArr[99] = Pidentifier;
+		return;
     }
     else if (boardArr[oldPos + wordLength] > 4) { 
         oldoldPos = oldPos;
