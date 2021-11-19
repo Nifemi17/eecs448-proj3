@@ -3,26 +3,26 @@ let tests = {
 	/*
 	* tests related to word database preparation
 	*/
-	validWord: function () {
+	isEnglishWord: function () {
 		let testMessage = "(word check)\nEnglish words are accepted by word database: ";	
 		var str = 'zwitterion';
 		return testMessage + passOrFail(isWord(str));
 	},
 	
-	invalidWord: function () {
+	isNotEnglishWord: function () {
 		let testMessage = "(word check)\nNon-english words are rejected by word database: ";	
-		var str = 'affluentic';
+		var str = 'affluentic'; //non-English word
 		return testMessage + passOrFail(!isWord(str));
 	},
 	
 	smallWords: function () {
 		let testMessage = "(anagrams minigame)\nUser string inputs less than 3 are rejected: ";
 		document.getElementById("randoLetters").textContent = testLetters();
-		document.getElementById("inputWord").textContent = "is"//word is english and in testLetters bank, but only 2 letters long
+		document.getElementById("inputWord").value = "is"//word is english and in testLetters bank, but only 2 letters long
 		
 		validLetters();
 		
-		let result = passOrFail(longest != "is");
+		let result = passOrFail(longest != "IS");
 		
 		return testMessage + result;
 	},
@@ -30,11 +30,25 @@ let tests = {
 	notInWordBank: function () {
 		let testMessage = "(anagrams minigame)\nUser string inputs made of letters not in letter bank are rejected: ";
 		document.getElementById("randoLetters").textContent = testLetters();
-		document.getElementById("inputWord").textContent = "apple"//word is english and >= 3 letters, but only one p is in the letter bank
+		document.getElementById("inputWord").value = "apple"//word is english and >= 3 letters, but only one p is in the letter bank
 		
 		validLetters();
 		
-		let result = passOrFail(longest != "apple");
+		let result = passOrFail(longest != "APPLE");
+		
+		return testMessage + result;
+	},
+	
+	newLongestWord: function () {
+		let testMessage = "(anagrams minigame)\nA valid user input word replaces the current longest word if longer: ";
+		
+		document.getElementById("randoLetters").textContent = testLetters();
+		document.getElementById("inputWord").value = "able"//word is valid based on testLetters letter bank
+		
+		longest = "age"; //smaller than 'able'
+		
+		validLetters();
+		let result = passOrFail(longest == "ABLE");
 		
 		return testMessage + result;
 	},
@@ -103,6 +117,8 @@ function testLetters() {
 *	@post global variables used in testing are reset to initial values
 */
 function resetValues() {
+	document.getElementById("randoLetters").textContent = "";
+	document.getElementById("inputWord").textContent
 	longest = '';
 	playerTurn = 0;
 	playerArr = [];
