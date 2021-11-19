@@ -65,7 +65,21 @@ let tests = {
 		return testMessage + result;
 	},
 	
-	preventTurn: function () {
+	shorterThanLongest: function () {
+		let testMessage = "(anagrams minigame)\nA valid user input word does not replace longest word if shorter: ";
+		
+		document.getElementById("randoLetters").textContent = testLetters();
+		document.getElementById("inputWord").value = "able"//word is valid based on testLetters letter bank
+		
+		longest = "green"; //bigger than 'able'
+		
+		validLetters();
+		let result = passOrFail(longest == "green");
+		
+		return testMessage + result;
+	},
+	
+	preventTurnRestart: function () {
 		let testMessage = "(anagrams minigame) Player cannot restart minigame while current minigame instance is playing: ";
 		
 		longest = "aaaaa";
@@ -117,7 +131,8 @@ let tests = {
 		let testMoveValue = 5;
 		
 		setPos(testMoveValue, testPlayer);
-		let result = passOrFail(boardArr[endSpace] == testPlayer);
+		let result = passOrFail(boardArr[99] == testPlayer);
+		console.log(boardArr);
 		
 		return testMessage + result;
 	},
@@ -132,9 +147,25 @@ let tests = {
 		let result = passOrFail(boardArr[3] == testPlayer);
 		
 		return testMessage + result;
+	},
+	
+	winConditionMet: function() {
+		let testMessage = "(player movement)\nPlayer wins when the last space is reached: ";
+		
+		startPlay(2);
+		boardArr[95] = 1;
+		longest = "aaaa";
+		
+		playGame();
+
+		let result = passOrFail(gameFinished);
+		
+		return testMessage + result;
 	}
 }
-
+/*
+*	@return static letter bank for testing
+**/
 function testLetters() {
 	return "SIAPLEBYTB";
 }
@@ -153,6 +184,8 @@ function resetValues() {
 		if (space != 0 && space != WORMHOLE && space != BLACK_HOLE)
 			boardArr[i] = 0;
 	}
+	
+	console.log(boardArr.length);
 }
 /**
 *	@return 'PASS' or 'FAIL' based on testPassed's value
