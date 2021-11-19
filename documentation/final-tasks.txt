@@ -1,6 +1,6 @@
 -Finish special spaces - (complete)
 
--maintenance plan - Michael
+-maintenance plan - (complete)
 
 -defect tool - (complete)
 
@@ -14,13 +14,13 @@
 	-Anagrams.js - (complete)
 	-index.html / css file - (complete)
 
--integration strategy - Michael
+-integration strategy - (complete)
 
--deployment plan - Rudro
+-deployment plan - (complete)
 
--code review - Nifemi
+-code review - (complete)
 
--starting position - Anna
+-starting position - (complete)
 
 -print who's turn it is - (complete)
 
