@@ -170,8 +170,13 @@ function testLetters() {
 *	@post global variables used in testing are reset to initial values
 */
 function resetValues() {
-	document.getElementById("randoLetters").textContent = "";
-	document.getElementById("inputWord").textContent
+	document.getElementById("currentTurn").innerHTML = "Player 1's Turn";
+	document.getElementById("turnStartButton").value = "Click to start turn";
+	document.getElementById("randoLetters").textContent = "RANDOM LETTERS HERE";
+	document.getElementById("inputWord").value = "";
+	document.getElementById("longWord").innerHTML = " ";
+	gameFinished = false;
+	isTurn = false;
 	longest = '';
 	playerTurn = 0;
 	playerArr = [];
@@ -183,6 +188,8 @@ function resetValues() {
 	}
 	
 	console.log(boardArr.length);
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	printBoard();
 }
 /**
 *	@return 'PASS' or 'FAIL' based on testPassed's value
