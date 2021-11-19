@@ -6,10 +6,10 @@
 
 -swap players - (complete)
 
--test suite - Yuri
+-test suite - (complete)
 
 -comments:
-	-specSpaces.js / wordCheck.js / game.js- Yuri
+	-specSpaces.js / wordCheck.js / game.js- (complete)
 	-Board.js/Player.js - (complete)
 	-Anagrams.js - (complete)
 	-index.html / css file - (complete)

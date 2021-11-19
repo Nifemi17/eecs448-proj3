@@ -1,8 +1,5 @@
 //Object that holds all test functions
 let tests = {
-	/*
-	* tests related to word database preparation
-	*/
 	isEnglishWord: function () {
 		let testMessage = "(word check)\nEnglish words are accepted by word database: ";	
 		var str = 'zwitterion';
