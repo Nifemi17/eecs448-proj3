@@ -1,9 +1,15 @@
+/**
+*	@post winning player is printed to screen
+*/
 function printWin() {
 	gameFinished = true;
 	document.getElementById("currentTurn").innerHTML = "Player " + boardArr[boardArr.length - 1] + " wins!!";
 	document.getElementById("turnStartButton").value = "Click to restart game";
 }
 
+/**
+*	@post current turn's player is moved on board, next player indicated or win message printed
+*/
 function playGame()
 {
 	context.clearRect(0, 0, canvas.width, canvas.height);
@@ -32,6 +38,11 @@ function playGame()
 	}
 }
 
+/**
+*	@pre number of players is selected by user
+*	@post a Player object is created for each player, main game is displayed
+*	@param num number of players playing
+*/
 function setPlayers(num) {
 	numPlayers = num;
 	startPlay(numPlayers);
