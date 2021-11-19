@@ -64,7 +64,6 @@ function movePlayer(wordLength, Pidentifier, Pcolor)
             if(boardArr[spot] == Pidentifier)
             {   
                 context.fillStyle = Pcolor;
-                console.log(spot)
                 if(row%2 == 0)
                 {
                     context.fillRect(5 + col*50 ,380 -(row*40),15,15)

@@ -37,7 +37,6 @@ function letters() {
         characters = characters.slice(0, randomNum) + characters.slice(randomNum + 1, charactersLength);
         charactersLength = characters.length;
     }
-    console.log(result);
 
     let container = document.getElementById("randoLetters");
     container.textContent = result;
@@ -56,7 +55,6 @@ function validLetters() {
     let container1 = document.getElementById("randoLetters");
     let container2 = document.getElementById("inputWord");
     userInput = container2.value.toUpperCase();
-    console.log("userInput:", userInput);
     letters = container1.textContent;
 
     var match;
@@ -85,9 +83,6 @@ function validLetters() {
         userInput = '';
         redX();
     }
-    console.log("user input has valid letters:", match);
-    console.log("user input is an english word and >= 3 letters: ", isWord(userInput.toLowerCase()));
-    console.log('\n');
     document.getElementById("longWord").innerHTML = "Longest word is: " + longest;
 }
 
@@ -127,7 +122,6 @@ function clearUserInput() {
  * @post returns the longest word that the user inputs
  */
 function lengthChecker() {
-    console.log("user input is longer than longest word:", (userInput.length > longest.length));
     if (userInput.length > longest.length) {
 
         return userInput;

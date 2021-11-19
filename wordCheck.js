@@ -22,7 +22,6 @@ async function wordPrep() {
 		$.get('https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt', function(contents){
 			//contents variable now contains the contents of the textfile as string
 			wordArray = contents;
-			console.log('wordArray filled');
 			resolve();
 		});
 	});
