@@ -30,7 +30,19 @@ let tests = {
 	notInWordBank: function () {
 		let testMessage = "(anagrams minigame)\nUser string inputs made of letters not in letter bank are rejected: ";
 		document.getElementById("randoLetters").textContent = testLetters();
-		document.getElementById("inputWord").value = "apple"//word is english and >= 3 letters, but only one p is in the letter bank
+		document.getElementById("inputWord").value = "ploy"//word is english and >= 3 letters, but not in letter bank
+		
+		validLetters();
+		
+		let result = passOrFail(longest != "PLOY");
+		
+		return testMessage + result;
+	},
+	
+	EachLetterUsedOnce: function () {
+		let testMessage = "(anagrams minigame)\nDuplicate letters not allowed if letter bank does not have more than one: ";
+		document.getElementById("randoLetters").textContent = testLetters();
+		document.getElementById("inputWord").value = "APPLE"//word is english and >= 3 letters, but only one p is in the letter bank
 		
 		validLetters();
 		
